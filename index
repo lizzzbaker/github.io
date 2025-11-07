@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-page="home">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elizabeth — Portfolio</title>
+  <meta name="description" content="Designer–developer crafting calm, delightful interfaces. Portfolio of Elizabeth." />
+  <meta property="og:title" content="Elizabeth — Portfolio" />
+  <meta property="og:description" content="Designer–developer crafting calm, delightful interfaces." />
+  <meta property="og:type" content="website" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="/">
+      <span class="brand-badge" aria-hidden="true"></span>
+      <span class="brand-text">Elizabeth</span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="index.html" data-link="home">Home</a>
+      <a href="about.html" data-link="about">About</a>
+      <a href="work.html" data-link="work">Work</a>
+      <a href="blog.html" data-link="blog">Blog</a>
+      <a class="cta" href="contact.html" data-link="contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero card pad">
+      <h1 class="title">Designer-developer crafting calm, delightful interfaces.</h1>
+      <p class="subtitle">
+        I build useful, beautiful software and write about learning and design. I ship fast, keep things simple, and sweat the details.
+      </p>
+      <div class="chips">
+        <span class="chip">UI/UX</span>
+        <span class="chip alt">Frontend</span>
+        <span class="chip">Prototyping</span>
+        <span class="chip alt">Writing</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="sec-head">
+        <h2 class="sec-title">Selected Work</h2>
+        <a class="muted" href="work.html">See all →</a>
+      </div>
+      <div class="grid">
+        <article class="project card pad">
+          <a class="thumb" href="#" aria-label="EllebeeEdu">
+            <img src="assets/thumb-ellebeeedu.jpg" alt="EllebeeEdu interface preview" onerror="this.style.display='none'">
+            <div class="thumb-fallback" aria-hidden="true"></div>
+          </a>
+          <h3 class="proj-title">EllebeeEdu — K-5 resource hub</h3>
+          <p class="proj-tags">Brand + UI • Next.js • CMS</p>
+          <p class="muted">Playful, accessible system with member-only resources and fast downloads.</p>
+        </article>
+
+        <article class="project card pad">
+          <a class="thumb" href="#" aria-label="TomoFit">
+            <img src="assets/thumb-tomofit.jpg" alt="TomoFit product UI" onerror="this.style.display='none'">
+            <div class="thumb-fallback" aria-hidden="true"></div>
+          </a>
+          <h3 class="proj-title">TomoFit — partner workouts</h3>
+          <p class="proj-tags">Product design • Vue/Tailwind</p>
+          <p class="muted">Onboarding, matching, scheduling, and progress insights.</p>
+        </article>
+
+        <article class="project card pad">
+          <a class="thumb" href="#" aria-label="EllebeeDash">
+            <img src="assets/thumb-ellebeedash.jpg" alt="EllebeeDash data viz" onerror="this.style.display='none'">
+            <div class="thumb-fallback" aria-hidden="true"></div>
+          </a>
+          <h3 class="proj-title">EllebeeDash — trading journal</h3>
+          <p class="proj-tags">Data viz • SvelteKit</p>
+          <p class="muted">Pastel Y2K vibe paired with pragmatic analytics components.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="sec-head">
+        <h2 class="sec-title">From the blog</h2>
+        <a class="muted" href="blog.html">All posts →</a>
+      </div>
+      <div class="blog-grid">
+        <a class="post" href="posts/teaching-creativity-in-the-age-of-ai.html">
+          <time class="muted">Nov 2025</time>
+          <h3>Teaching creativity in the age of AI</h3>
+          <p>Curiosity scaffolds that help kids think, not copy.</p>
+        </a>
+        <a class="post" href="posts/designing-with-calm-defaults.html">
+          <time class="muted">Nov 2025</time>
+          <h3>Designing with calm defaults</h3>
+          <p>Less chrome, more clarity: patterns I reuse.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap small">© <span id="year"></span> Elizabeth — All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
