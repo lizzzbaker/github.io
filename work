@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-page="work">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Work — Elizabeth</title>
+  <meta name="description" content="Selected projects and case studies by Elizabeth." />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html"><span class="brand-badge"></span><span class="brand-text">Elizabeth</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="index.html" data-link="home">Home</a>
+      <a href="about.html" data-link="about">About</a>
+      <a href="work.html" data-link="work">Work</a>
+      <a href="blog.html" data-link="blog">Blog</a>
+      <a class="cta" href="contact.html" data-link="contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <div class="sec-head">
+        <h1 class="sec-title">Selected Work</h1>
+        <span class="muted">Case notes on projects I can share.</span>
+      </div>
+
+      <div class="grid">
+        <!-- Project 1 -->
+        <article class="project card pad">
+          <a class="thumb" href="#" aria-label="EllebeeEdu">
+            <img src="assets/thumb-ellebeeedu.jpg" alt="EllebeeEdu interface preview" onerror="this.style.display='none'">
+            <div class="thumb-fallback" aria-hidden="true"></div>
+          </a>
+          <h3 class="proj-title">EllebeeEdu — K-5 resource hub</h3>
+          <p class="proj-tags">Brand + UI • Next.js • CMS</p>
+          <ul class="muted list">
+            <li>Member-only downloads with simple tagging and search.</li>
+            <li>Design system for playful yet accessible components.</li>
+            <li>Optimized for fast TTFB and clean a11y semantics.</li>
+          </ul>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project card pad">
+          <a class="thumb" href="#">
+            <img src="assets/thumb-tomofit.jpg" alt="TomoFit UI" onerror="this.style.display='none'">
+            <div class="thumb-fallback" aria-hidden="true"></div>
+          </a>
+          <h3 class="proj-title">TomoFit — partner workouts</h3>
+          <p class="proj-tags">Product design • Vue/Tailwind</p>
+          <ul class="muted list">
+            <li>Onboarding & matching flows with simple progress cues.</li>
+            <li>Calendar + habit streak visualizations.</li>
+            <li>Lightweight motion for micro-feedback.</li>
+          </ul>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project card pad">
+          <a class="thumb" href="#">
+            <img src="assets/thumb-ellebeedash.jpg" alt="EllebeeDash data visualization" onerror="this.style.display='none'">
+            <div class="thumb-fallback" aria-hidden="true"></div>
+          </a>
+          <h3 class="proj-title">EllebeeDash — trading journal</h3>
+          <p class="proj-tags">Data viz • SvelteKit</p>
+          <ul class="muted list">
+            <li>Custom P&L components with friendly summaries.</li>
+            <li>Keyboard navigation and reduced-motion modes.</li>
+            <li>Clean pastel aesthetic with strong contrast.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap small">© <span id="year"></span> Elizabeth</div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
