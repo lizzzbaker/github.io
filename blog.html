@@ -4,21 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Writing — Elizabeth Baker</title>
-  <meta name="description" content="Notes, essays, and build logs from ongoing projects and research." />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="assets/favicon.png" />
 </head>
+
 <body>
   <header class="nav">
     <div class="brand">
       <span class="brand-text">Elizabeth Baker</span>
-      <span class="brand-sub"><a href="mailto:lizzie.baker10@gmail.com">lizzie.baker10@gmail.com</a> • <a href="tel:+12487572290">248-757-2290</a></span>
+      <span class="brand-sub">
+        <a href="mailto:lizzie.baker10@gmail.com">lizzie.baker10@gmail.com</a> •
+        <a href="tel:+12487572290">248-757-2290</a>
+      </span>
     </div>
-    <nav class="links" aria-label="Main">
-      <a href="index.html" data-link="home">Home</a>
-      <a href="about.html" data-link="about">About</a>
-      <a href="work.html" data-link="work">Projects</a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Projects</a>
       <a href="blog.html" data-link="blog">Writing</a>
     </nav>
   </header>
@@ -27,32 +30,32 @@
     <section class="section">
       <div class="sec-head">
         <h1 class="sec-title">Writing</h1>
-        <span class="muted">Short reads, research notes, and patterns I’m testing.</span>
+        <span class="muted">Ideas I’m thinking through as I explore learning sciences and design.</span>
       </div>
 
-      <div class="blog-grid">
-        <a class="post" href="posts/teaching-creativity-in-the-age-of-ai.html">
-          <img class="post-cover" src="assets/blog-ai.jpg" alt="Abstract shapes representing AI and creativity">
-          <div class="post-body">
-            <time class="muted">Nov 2025</time>
-            <h3>Teaching creativity in the age of AI</h3>
-            <p>Scaffolds that help kids think, not copy.</p>
-          </div>
-        </a>
+      <div class="cards">
+        <article class="blog-card card">
+          <h3 class="blog-title">Metacognition for Minis</h3>
+          <p class="muted">How young learners build awareness of their own thinking.</p>
+        </article>
 
-        <a class="post" href="posts/designing-with-calm-defaults.html">
-          <img class="post-cover" src="assets/blog-calm.jpg" alt="Minimal interface composition">
-          <div class="post-body">
-            <time class="muted">Nov 2025</time>
-            <h3>Designing with calm defaults</h3>
-            <p>Reducing visual noise to make thinking easier.</p>
-          </div>
-        </a>
+        <article class="blog-card card">
+          <h3 class="blog-title">Children, AI, and Curiosity</h3>
+          <p class="muted">What happens when tools think with us?</p>
+        </article>
+
+        <article class="blog-card card">
+          <h3 class="blog-title">Designing for Neurodivergent Attention</h3>
+          <p class="muted">A look at cognitive load, pacing, and frustration thresholds.</p>
+        </article>
       </div>
     </section>
   </main>
 
-  <footer class="footer"><div class="wrap small">© <span id="year"></span> Elizabeth Baker</div></footer>
+  <footer class="footer">
+    <div class="wrap small">© <span id="year"></span> Elizabeth Baker</div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
