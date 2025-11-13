@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="projects">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,100 +9,94 @@
 
 <body>
 <header class="nav">
-  <div class="brand">Elizabeth Baker</div>
+  <div class="brand"><span class="brand-text">Elizabeth Baker</span></div>
   <nav class="links">
-    <a href="index.html">About</a>
-    <a href="projects.html">Projects</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html" data-link="projects">Projects</a>
     <a href="writing.html">Writing</a>
   </nav>
 </header>
 
 <main class="wrap">
-  <section class="section">
-    <h1 class="sec-title">Projects</h1>
+<section class="section">
+<h1 class="sec-title">Projects</h1>
 
-    <div class="project-grid">
+<div class="projects-grid">
 
-      <article class="project-card">
-        <img class="thumb" src="assets/tomo-fit.jpg" alt="Tomo-Fit thumbnail">
-        <h3>Tomo-Fit</h3>
-        <p class="muted">A behavior-design system for routine-building and reflection.</p>
-        <p class="tags">Behavior Design • Web App • Figma</p>
-        <a class="btn small" href="tomo-fit.pdf" target="_blank">Read Full Project</a>
-      </article>
-
-      <article class="project-card">
-        <img class="thumb" src="assets/healthcare-thumb.png" alt="Healthcare Analysis">
-        <h3>Healthcare Inequality Predictor</h3>
-        <p class="muted">Data-driven modeling to examine inequity in preventative care outcomes.</p>
-        <p class="tags">Data Science • Python • Research</p>
-        <a class="btn small" href="healthcare-inequality.pdf" target="_blank">Read Full Project</a>
-      </article>
-
-      <article class="project-card">
-        <img class="thumb" src="assets/gardenbee-thumb.png" alt="GardenBee">
-        <h3>GardenBee Platform & Curriculum</h3>
-        <p class="muted">Branding, web design, and learning materials for early sustainability education.</p>
-        <p class="tags">Branding • Curriculum • Web Design</p>
-        <a class="btn small" href="gardenbee.pdf" target="_blank">Read Full Project</a>
-      </article>
-
-      <article class="project-card">
-        <img class="thumb" src="assets/musescore-thumb.png" alt="MuseScore Governance">
-        <h3>MuseScore Governance Analysis</h3>
-        <p class="muted">A study of collaborative governance in open-source creative software.</p>
-        <p class="tags">Open Source • Research • Systems</p>
-        <a class="btn small" href="musescore-governance.pdf" target="_blank">Read Full Project</a>
-      </article>
-
-      <article class="project-card">
-        <img class="thumb" src="assets/jewelers-thumb.png" alt="Elegance Jewelers Study">
-        <h3>Elegance Jewelers Strategy Study</h3>
-        <p class="muted">A profitability and decision-strategy analysis for a retail jewelry brand.</p>
-        <p class="tags">Analytics • Strategy • Modeling</p>
-        <a class="btn small" href="elegance-jewelers.pdf" target="_blank">Read Full Project</a>
-      </article>
-
-      <article class="project-card">
-        <img class="thumb" src="assets/numberline-thumb.png" alt="Number Line Walkabout">
-        <h3>Number Line Walkabout</h3>
-        <p class="muted">A movement-based number sense learning module.</p>
-        <p class="tags">Learning Sciences • K-5 • Curriculum</p>
-        <a class="btn small" href="number-line-walkabout.pdf" target="_blank">Read Full Project</a>
-      </article>
-
-      <article class="project-card">
-        <img class="thumb" src="assets/mathmotion-thumb.png" alt="Math as Motion">
-        <h3>Math as Motion Playground</h3>
-        <p class="muted">Exploring mathematics as embodied movement rather than symbolic work.</p>
-        <p class="tags">K-5 • Embodied Cognition • Curriculum</p>
-        <a class="btn small" href="math-as-motion.pdf" target="_blank">Read Full Project</a>
-      </article>
-
-      <article class="project-card">
-        <img class="thumb" src="assets/fraction-thumb.png" alt="Fraction Melt Lab">
-        <h3>Fraction Melt & Stretch Lab</h3>
-        <p class="muted">A manipulatives-based approach to conceptual fraction sense.</p>
-        <p class="tags">Curriculum • Math • K-5</p>
-        <a class="btn small" href="fraction-lab.pdf" target="_blank">Read Full Project</a>
-      </article>
-
-      <article class="project-card">
-        <img class="thumb" src="assets/wonder-thumb.png" alt="Wonder Carousel">
-        <h3>The Wonder Carousel</h3>
-        <p class="muted">A curiosity-driven exploration model for early learners.</p>
-        <p class="tags">Creativity • Early Learning • Design</p>
-        <a class="btn small" href="wonder-carousel.pdf" target="_blank">Read Full Project</a>
-      </article>
-
+  <!-- TOMO-FIT -->
+  <article class="project-card">
+    <img src="assets/tomo.jpg" class="project-thumb" alt="Tomo-Fit thumbnail">
+    <div class="project-text">
+      <h3>Tomo-Fit</h3>
+      <p>
+        A behavior-design framework for helping users build sustainable routines.  
+        Tomo-Fit blends habit psychology, progress visualization, and reflective prompts
+        to support long-term behavior change. Includes a technical architecture walkthrough,
+        app wireframes, and a user-testing report.
+      </p>
+      <a class="download-btn" href="tomo-fit.pdf" download>Download PDF</a>
     </div>
-  </section>
-</main>
+  </article>
 
-<footer class="footer">
-  <div class="wrap small">© <span id="year"></span> Elizabeth Baker</div>
-</footer>
+  <!-- HEALTHCARE INEQUALITY ML MODEL -->
+  <article class="project-card">
+    <img src="assets/health.jpg" class="project-thumb" alt="Healthcare Inequality thumbnail">
+    <div class="project-text">
+      <h3>Healthcare Inequality Predictor</h3>
+      <p>
+        A machine-learning model analyzing disparities in preventative care outcomes across
+        demographic groups. Includes feature engineering, multi-class evaluation (91%
+        accuracy), and policy-oriented recommendations for increasing equitable access
+        to screening services.
+      </p>
+      <a class="download-btn" href="healthcare-inequality.pdf" download>Download PDF</a>
+    </div>
+  </article>
 
-<script src="script.js"></script>
-</body>
-</html>
+  <!-- DIAMOND MODEL (NUMBER LINE / FRACTIONS / VIS STATS) -->
+  <article class="project-card">
+    <img src="assets/diamond.jpg" class="project-thumb" alt="Data visualization thumbnail">
+    <div class="project-text">
+      <h3>Number-Sense + Visualization Learning Modules</h3>
+      <p>
+        A set of movement-based and manipulatives-based math modules designed to strengthen
+        spatial reasoning, number-line intuition, and fraction sense. Includes side-by-side
+        visualizations, embodied-learning activities, and classroom integration strategies.
+      </p>
+      <a class="download-btn" href="number-line-walkabout.pdf" download>Download PDF</a>
+      <a class="download-btn" href="fraction-lab.pdf" download>Download Fraction Lab</a>
+    </div>
+  </article>
+
+  <!-- MUSESCORE GOVERNANCE -->
+  <article class="project-card">
+    <img src="assets/musescore.jpg" class="project-thumb" alt="MuseScore thumbnail">
+    <div class="project-text">
+      <h3>MuseScore Governance Analysis</h3>
+      <p>
+        A study examining how open-source creative communities make decisions at scale.
+        Focuses on stakeholder alignment, code-review workflows, and the evolution of
+        collaborative norms across product versions (including MuseScore 4.5).
+      </p>
+      <a class="download-btn" href="musescore-governance.pdf" download>Download PDF</a>
+    </div>
+  </article>
+
+  <!-- ELEGANCE JEWELERS STRATEGY -->
+  <article class="project-card">
+    <img src="assets/2.png" class="project-thumb" alt="Strategy study thumbnail">
+    <div class="project-text">
+      <h3>Elegance Jewelers — Strategy & Profitability</h3>
+      <p>
+        A quantitative decision-strategy analysis for a retail jewelry brand.  
+        Explores pricing structures, operational tradeoffs, and customer-behavior patterns
+        using scenario modeling and profit-sensitivity analysis.
+      </p>
+      <a class="download-btn" href="elegance-jewelers.pdf" download>Download PDF</a>
+    </div>
+  </article>
+
+  <!-- GARDENBEE PLATFORM -->
+  <article class="project-card">
+    <img src="assets/gardenbee.jpg" class="project-thumb" alt="Garden
