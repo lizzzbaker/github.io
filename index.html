@@ -3,19 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elizabeth Baker — Projects & Research</title>
-  <meta name="description" content="Projects, prototypes, and research notes by Elizabeth Baker." />
+  <title>Elizabeth Baker — Learning, Design, and Creativity</title>
+  <meta name="description" content="A playful, research-driven portfolio exploring how children learn, create, and think in a tech-saturated world." />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="assets/favicon.png" />
 </head>
+
 <body>
   <header class="nav">
     <div class="brand">
       <span class="brand-text">Elizabeth Baker</span>
-      <span class="brand-sub"><a href="mailto:lizzie.baker10@gmail.com">lizzie.baker10@gmail.com</a> • <a href="tel:+12487572290">248-757-2290</a></span>
+      <span class="brand-sub">
+        <a href="mailto:lizzie.baker10@gmail.com">lizzie.baker10@gmail.com</a> •
+        <a href="tel:+12487572290">248-757-2290</a>
+      </span>
     </div>
-    <nav class="links" aria-label="Main">
+    <nav class="links">
       <a href="index.html" data-link="home">Home</a>
       <a href="about.html" data-link="about">About</a>
       <a href="work.html" data-link="work">Projects</a>
@@ -24,112 +28,70 @@
   </header>
 
   <main class="wrap">
-    <section class="hero card pad">
-      <h1 class="title">Projects, prototypes, and research notes.</h1>
-      <p class="subtitle">
-        I build playful, human-centered tools and study how people learn with them.
-        This space is a running collection of things I’m making and learning.
-      </p>
-      <div class="chips">
-        <span class="chip">Projects</span>
-        <span class="chip alt">Research</span>
-        <span class="chip">Design</span>
-        <span class="chip alt">Writing</span>
+    <!-- HERO -->
+    <section class="hero pad-xl">
+      <div class="hero-inner">
+        <h1 class="hero-title">
+          Building tools and ideas for how <span class="highlight">children think</span> in a world shaped by technology.
+        </h1>
+        <p class="hero-subtitle">
+          I explore the intersection of <strong>learning sciences, human–computer interaction, creativity,</strong>
+          and <strong>neurodivergent-informed design</strong>.  
+          This is a living notebook of projects, prototypes, and questions I’m following as I prepare for graduate study.
+        </p>
       </div>
     </section>
 
-    <!-- HIGHLIGHTS -->
+    <!-- GALLERY OF THINKING -->
     <section class="section">
       <div class="sec-head">
-        <h2 class="sec-title">Highlights</h2>
-        <span class="muted">A few recent things I’m proud of.</span>
+        <h2 class="sec-title">A tiny gallery of evidence I think in the field</h2>
+        <span class="muted">Playful, research-flavored things I build, test, and wonder about.</span>
       </div>
+
       <div class="grid">
-        <article class="card pad">
-          <h3 class="proj-title">Curiosity-first learning</h3>
-          <ul class="muted list">
-            <li>Mini activities that nudge reflection and self-explanation.</li>
-            <li>Kids practice “how to think,” not just “what to answer.”</li>
-          </ul>
+        <article class="project card pad">
+          <a class="thumb" href="work.html"><img src="assets/thumb-ellebeeedu.jpg" alt="EllebeeEdu"></a>
+          <h3 class="proj-title">K-5 Thinking Toolkit</h3>
+          <p class="proj-tags">Creativity • Metacognition • UX Research</p>
         </article>
-        <article class="card pad">
-          <h3 class="proj-title">Teacher-friendly resources</h3>
-          <ul class="muted list">
-            <li>Clear visuals, quick setup, simple differentiation.</li>
-            <li>Open artifacts teachers can remix.</li>
-          </ul>
+
+        <article class="project card pad">
+          <a class="thumb" href="work.html"><img src="assets/thumb-tomofit.jpg" alt="Habit system"></a>
+          <h3 class="proj-title">Attention-Friendly Habit Patterns</h3>
+          <p class="proj-tags">Behavior Design • ADHD-informed UX</p>
         </article>
-        <article class="card pad">
-          <h3 class="proj-title">Calm product patterns</h3>
-          <ul class="muted list">
-            <li>Interfaces with strong hierarchy and low visual noise.</li>
-            <li>Small interactions that feel good and teach well.</li>
-          </ul>
+
+        <article class="project card pad">
+          <a class="thumb" href="work.html"><img src="assets/thumb-ellebeedash.jpg" alt="Analytics"></a>
+          <h3 class="proj-title">Transparent Learning Analytics</h3>
+          <p class="proj-tags">Data Visualization • Explainability</p>
         </article>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="work" class="section">
-      <div class="sec-head">
-        <h2 class="sec-title">Selected Projects</h2>
-        <a class="muted" href="work.html">Browse all →</a>
-      </div>
-      <div class="grid">
-        <article class="project card pad">
-          <a class="thumb" href="#">
-            <img src="assets/thumb-ellebeeedu.jpg" alt="EllebeeEdu interface preview">
-          </a>
-          <h3 class="proj-title">EllebeeEdu — K-5 AI & Thinking</h3>
-          <p class="proj-tags">Curriculum • UX research • Next.js</p>
-          <p class="muted">A growing set of activities for curiosity, metacognition, and digital sense-making.</p>
-        </article>
-
-        <article class="project card pad">
-          <a class="thumb" href="#">
-            <img src="assets/thumb-tomofit.jpg" alt="TomoFit UI">
-          </a>
-          <h3 class="proj-title">TomoFit — Habits & Motivation</h3>
-          <p class="proj-tags">Behavior design • Vue/Tailwind</p>
-          <p class="muted">Lightweight streaks and scheduling that encourage honest reflection over vanity metrics.</p>
-        </article>
-
-        <article class="project card pad">
-          <a class="thumb" href="#">
-            <img src="assets/thumb-ellebeedash.jpg" alt="EllebeeDash data visualization">
-          </a>
-          <h3 class="proj-title">EllebeeDash — Transparent Analytics</h3>
-          <p class="proj-tags">Data viz • SvelteKit</p>
-          <p class="muted">Friendly, explainable summaries that support growth, not score-chasing.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- WRITING -->
+    <!-- WRITING FEATURED -->
     <section class="section">
       <div class="sec-head">
-        <h2 class="sec-title">Recent Writing</h2>
-        <a class="muted" href="blog.html">All posts →</a>
+        <h2 class="sec-title">Writing & Reflection</h2>
+        <span class="muted">Short ideas about how kids learn, think, and create.</span>
       </div>
-      <div class="blog-grid">
-        <a class="post" href="posts/teaching-creativity-in-the-age-of-ai.html">
-          <img class="post-cover" src="assets/blog-ai.jpg" alt="Abstract shapes representing AI and creativity">
-          <div class="post-body">
-            <time class="muted">Nov 2025</time>
-            <h3>Teaching creativity in the age of AI</h3>
-            <p>Small prompts that help kids think, not copy.</p>
-          </div>
-        </a>
-        <a class="post" href="posts/designing-with-calm-defaults.html">
-          <img class="post-cover" src="assets/blog-calm.jpg" alt="Minimal interface composition">
-          <div class="post-body">
-            <time class="muted">Nov 2025</time>
-            <h3>Designing with calm defaults</h3>
-            <p>Less chrome, more clarity—patterns I keep reusing.</p>
-          </div>
-        </a>
+
+      <div class="cards">
+        <article class="blog-card card">
+          <h3 class="blog-title">Metacognition for Minis</h3>
+          <p class="muted">How to help young learners notice and guide their own thinking.</p>
+          <a href="blog.html" class="card-link">Read</a>
+        </article>
+
+        <article class="blog-card card">
+          <h3 class="blog-title">Children, AI, and Curiosity</h3>
+          <p class="muted">What happens when tech becomes a partner in thinking?</p>
+          <a href="blog.html" class="card-link">Read</a>
+        </article>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
