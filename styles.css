@@ -1,101 +1,216 @@
-:root{
-  --bg:#0b0b10;
-  --panel:#11121a;
-  --ink:#eaeaf2;
-  --muted:#a5a7b8;
-  --accent:#b9e5ff;
-  --accent-2:#ffd6f2;
-  --ring:rgba(185,229,255,.45);
-  --radius:20px;
-  --shadow:0 10px 30px rgba(0,0,0,.35);
-  --max:1100px;
+/* ------------------------------
+   GLOBAL
+------------------------------ */
+
+:root {
+  --bg: #faf9fc;
+  --surface: #ffffff;
+  --text: #2a2a2a;
+  --muted: #6d6d6d;
+
+  --accent: #b486f9;
+  --accent2: #ffe3f3;
+  --accent3: #c8e7ff;
+
+  --radius: 16px;
+  --radius-lg: 32px;
+
+  --shadow: 0 6px 20px rgba(0,0,0,0.06);
+  --shadow-soft: 0 3px 12px rgba(0,0,0,0.04);
+
+  --transition: 0.25s ease;
 }
 
-*{box-sizing:border-box}
-html,body{margin:0;background:
-  radial-gradient(1200px 800px at 80% -10%, #142032 0%, transparent 60%),
-  var(--bg);
-  color:var(--ink);
-  font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  line-height:1.55
-}
-a{color:var(--ink);text-decoration:none}
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
-  outline:2px solid var(--ring);outline-offset:2px;border-radius:10px
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
 
-.wrap{max-width:var(--max);margin:0 auto;padding:28px}
-
-.nav{
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  position:sticky;top:0;
-  background:linear-gradient(180deg, rgba(11,11,16,.85), rgba(11,11,16,0));
-  backdrop-filter:saturate(1.2) blur(6px);
-  padding:16px 28px;z-index:50
+h1, h2, h3 {
+  font-family: "Outfit", sans-serif;
+  margin: 0 0 0.5em;
 }
-.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.3px}
-.brand-badge{width:28px;height:28px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 6px 18px rgba(185,229,255,.35)}
-.links{display:flex;gap:18px;flex-wrap:wrap}
-.links a{color:var(--muted)}
-.links a.active{color:var(--ink)}
-.cta{padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));box-shadow:var(--shadow)}
 
-.hero{padding:56px 0 12px}
-.card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow)}
-.pad{padding:28px}
-.title{font-family:Outfit,Inter,sans-serif;font-size:44px;line-height:1.1;margin:0 0 12px}
-.subtitle{color:var(--muted);font-size:18px}
-.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-.chip{font-size:12px;color:#0b0b10;background:linear-gradient(135deg,var(--accent),#e6f7ff);padding:6px 10px;border-radius:999px;font-weight:600}
-.chip.alt{background:linear-gradient(135deg,var(--accent-2),#fff1fb)}
 
-.section{padding:34px 0}
-.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
-.sec-title{font-family:Outfit,Inter,sans-serif;font-size:28px;margin:0}
-.muted{color:var(--muted);font-size:15px}
-.small{font-size:13px}
+/* ------------------------------
+   NAV
+------------------------------ */
 
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.project{display:flex;flex-direction:column}
-.thumb{aspect-ratio:16/10;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;background:linear-gradient(135deg,#1a2333,#101520)}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.thumb-fallback{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));opacity:.7}
-.proj-title{font-weight:600;margin:12px 0 6px}
-.proj-tags{color:var(--muted);font-size:13px}
-
-.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.post{display:block;padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01))}
-.post h3{margin:6px 0 8px;font-size:18px}
-.post p{margin:0;color:var(--muted)}
-
-.about{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.head{font-size:22px;font-weight:600;margin:0 0 8px}
-.list{margin:0;padding-left:18px}
-.rule{border:none;border-top:1px solid rgba(255,255,255,.12);margin:18px 0}
-
-.prose p{color:var(--ink)}
-.prose h1,.prose h2,.prose h3{font-family:Outfit,Inter,sans-serif}
-.prose h1{font-size:32px}
-.prose h2{font-size:22px}
-.prose h3{font-size:18px}
-
-.footer{padding:40px 0 18px;color:var(--muted);font-size:14px}
-
-.contact-form{display:grid;gap:12px}
-input, textarea{
-  width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);
-  background:#0f1118;color:var(--ink)
+.nav {
+  padding: 1.2em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-button{cursor:pointer}
-.btn{padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.05));color:var(--ink);font-weight:600}
 
-@media (max-width: 900px){
-  .grid{grid-template-columns:1fr 1fr}
-  .about{grid-template-columns:1fr}
-  .blog-grid{grid-template-columns:1fr}
-  .title{font-size:36px}
+.brand-text {
+  font-size: 1.4rem;
+  font-weight: 600;
 }
-@media (max-width: 560px){
-  .grid{grid-template-columns:1fr}
-  .nav .links{display:none}
+
+.brand-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+nav.links a {
+  margin-left: 1.8rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+nav.links a:hover {
+  color: var(--accent);
+}
+
+
+/* ------------------------------
+   HERO
+------------------------------ */
+
+.hero {
+  text-align: center;
+  background: radial-gradient(circle at top, #fff 20%, #f3ecff 100%);
+  border-radius: var(--radius-lg);
+  margin-bottom: 3em;
+}
+
+.hero-title {
+  font-size: 2.6rem;
+  max-width: 700px;
+  margin: 0 auto 1em;
+}
+
+.highlight {
+  background: linear-gradient(to right, var(--accent), var(--accent3));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  max-width: 580px;
+  margin: 0 auto;
+  color: var(--muted);
+}
+
+
+/* ------------------------------
+   SECTIONS
+------------------------------ */
+
+.wrap {
+  max-width: 1050px;
+  margin: auto;
+  padding: 2em;
+}
+
+.section + .section {
+  margin-top: 3rem;
+}
+
+.sec-title {
+  font-size: 1.9rem;
+  margin-bottom: 0.2em;
+}
+
+
+/* ------------------------------
+   CARDS / GRID
+------------------------------ */
+
+.grid {
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 1.4em;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.thumb img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: 1em;
+}
+
+
+/* ------------------------------
+   BLOG CARDS
+------------------------------ */
+
+.blog-card {
+  padding: 1.6em;
+  border-left: 6px solid var(--accent);
+}
+
+.blog-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.3em;
+}
+
+
+/* ------------------------------
+   ABOUT PAGE
+------------------------------ */
+
+.about {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-photo {
+  flex-shrink: 0;
+}
+
+.photo-oval {
+  width: 260px;
+  height: 340px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent3));
+  border-radius: 50% / 40%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.photo-oval img {
+  width: 95%;
+  height: auto;
+  border-radius: 50% / 40%;
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+
+.footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
