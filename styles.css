@@ -214,3 +214,73 @@ nav.links a:hover {
   color: var(--muted);
   font-size: 0.9rem;
 }
+
+/* ------------------------------
+   ABOUT — COLLAGE LAYOUT
+------------------------------ */
+
+.about-new {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.collage {
+  width: 45%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 170px;
+  gap: 1rem;
+  position: relative;
+}
+
+.collage-item {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* playful but polished staggering */
+.c1 { transform: rotate(-3deg); }
+.c2 { transform: rotate(2deg); }
+.c3 { transform: rotate(-2deg); }
+.c4 { transform: rotate(3deg); }
+
+.about-text-new {
+  width: 55%;
+  max-width: 550px;
+}
+
+.about-text-new h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.about-text-new p {
+  margin-bottom: 1.2rem;
+  color: #505050;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .about-new {
+    flex-direction: column;
+  }
+  .collage {
+    width: 100%;
+    grid-auto-rows: 150px;
+  }
+  .about-text-new {
+    width: 100%;
+  }
+}
+
