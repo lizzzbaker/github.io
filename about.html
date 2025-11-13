@@ -4,67 +4,63 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — Elizabeth Baker</title>
-  <meta name="description" content="What I’m building, why it matters, and how I work." />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="assets/favicon.png" />
 </head>
+
 <body>
   <header class="nav">
     <div class="brand">
       <span class="brand-text">Elizabeth Baker</span>
-      <span class="brand-sub"><a href="mailto:lizzie.baker10@gmail.com">lizzie.baker10@gmail.com</a> • <a href="tel:+12487572290">248-757-2290</a></span>
+      <span class="brand-sub">
+        <a href="mailto:lizzie.baker10@gmail.com">lizzie.baker10@gmail.com</a> •
+        <a href="tel:+12487572290">248-757-2290</a>
+      </span>
     </div>
-    <nav class="links" aria-label="Main">
-      <a href="index.html" data-link="home">Home</a>
+    <nav class="links">
+      <a href="index.html">Home</a>
       <a href="about.html" data-link="about">About</a>
-      <a href="work.html" data-link="work">Projects</a>
-      <a href="blog.html" data-link="blog">Writing</a>
+      <a href="work.html">Projects</a>
+      <a href="blog.html">Writing</a>
     </nav>
   </header>
 
   <main class="wrap">
-    <section class="section">
-      <div class="sec-head">
-        <h1 class="sec-title">About</h1>
-        <span class="muted">A quick note on what drives my work.</span>
+    <section class="section about">
+      <div class="about-photo">
+        <div class="photo-oval">
+          <img src="assets/portrait.png" alt="Portrait of Elizabeth Baker">
+        </div>
       </div>
 
-      <div class="about">
-        <div class="card pad">
-          <p class="head">What I care about</p>
-          <p class="muted">
-            Building tools that make learning feel clear, inviting, and genuinely exciting.
-            I like small, clever interfaces that encourage curiosity and reflection.
-          </p>
+      <div class="about-text">
+        <h1>Hi — I’m Elizabeth.</h1>
+        <p>
+          I design playful, research-grounded tools for how children think, learn, and create
+          in an increasingly technological world. I’m especially drawn to the cognitive texture of
+          childhood — curiosity, confusion, metacognition, attention, frustration, imagination —
+          and how learning environments can shape those experiences.
+        </p>
 
-          <p class="head" style="margin-top:12px;">How I work</p>
-          <ul class="muted list">
-            <li>Prototype early; test with real people (teachers, kids, readers).</li>
-            <li>Bias toward simplicity—clean hierarchy, friendly defaults.</li>
-            <li>Write as I build; the docs help shape the product.</li>
-          </ul>
-        </div>
+        <p>
+          My work sits at the intersection of learning sciences, HCI for education,
+          early-childhood curriculum design, and neurodivergent-informed approaches.
+        </p>
 
-        <div class="card pad">
-          <p class="head">Currently exploring</p>
-          <ul class="muted list">
-            <li>Prompts and scaffolds that teach kids how to think about their thinking.</li>
-            <li>Visual systems for transparent feedback and progress.</li>
-            <li>Practical AI literacy woven into everyday classroom tasks.</li>
-          </ul>
-          <p class="head" style="margin-top:12px;">Stack & tools</p>
-          <ul class="muted list">
-            <li>Design: Figma, Notion</li>
-            <li>Build: HTML/CSS/JS, React/Next, SvelteKit, Astro</li>
-            <li>Deploy: GitHub, Vercel</li>
-          </ul>
-        </div>
+        <p>
+          This portfolio is a collection of small experiments: prototypes, interfaces,
+          classroom-friendly tools, writing, research notes, and questions
+          I’m following as I prepare for doctoral study.
+        </p>
       </div>
     </section>
   </main>
 
-  <footer class="footer"><div class="wrap small">© <span id="year"></span> Elizabeth Baker</div></footer>
+  <footer class="footer">
+    <div class="wrap small">© <span id="year"></span> Elizabeth Baker</div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
