@@ -1,286 +1,36 @@
-/* ------------------------------
-   GLOBAL
------------------------------- */
-
-:root {
-  --bg: #faf9fc;
-  --surface: #ffffff;
-  --text: #2a2a2a;
-  --muted: #6d6d6d;
-
-  --accent: #b486f9;
-  --accent2: #ffe3f3;
-  --accent3: #c8e7ff;
-
-  --radius: 16px;
-  --radius-lg: 32px;
-
-  --shadow: 0 6px 20px rgba(0,0,0,0.06);
-  --shadow-soft: 0 3px 12px rgba(0,0,0,0.04);
-
-  --transition: 0.25s ease;
-}
-
-body {
+/* ----------------------------------------------------------
+   BASE STYLES
+---------------------------------------------------------- */
+* {
   margin: 0;
   padding: 0;
-  background: var(--bg);
+  box-sizing: border-box;
+}
+
+html, body {
   font-family: "Inter", sans-serif;
-  color: var(--text);
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3 {
-  font-family: "Outfit", sans-serif;
-  margin: 0 0 0.5em;
-}
-
-
-/* ------------------------------
-   NAV
------------------------------- */
-
-.nav {
-  padding: 1.2em 2em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand-text {
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-.brand-sub {
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-nav.links a {
-  margin-left: 1.8rem;
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-nav.links a:hover {
-  color: var(--accent);
-}
-
-
-/* ------------------------------
-   HERO
------------------------------- */
-
-.hero {
-  text-align: center;
-  background: radial-gradient(circle at top, #fff 20%, #f3ecff 100%);
-  border-radius: var(--radius-lg);
-  margin-bottom: 3em;
-}
-
-.hero-title {
-  font-size: 2.6rem;
-  max-width: 700px;
-  margin: 0 auto 1em;
-}
-
-.highlight {
-  background: linear-gradient(to right, var(--accent), var(--accent3));
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.hero-subtitle {
-  max-width: 580px;
-  margin: 0 auto;
-  color: var(--muted);
-}
-
-
-/* ------------------------------
-   SECTIONS
------------------------------- */
-
-.wrap {
-  max-width: 1050px;
-  margin: auto;
-  padding: 2em;
-}
-
-.section + .section {
-  margin-top: 3rem;
-}
-
-.sec-title {
-  font-size: 1.9rem;
-  margin-bottom: 0.2em;
-}
-
-
-/* ------------------------------
-   CARDS / GRID
------------------------------- */
-
-.grid {
-  display: grid;
-  gap: 1.6rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.card {
-  background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-  padding: 1.4em;
-  transition: var(--transition);
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
-}
-
-.thumb img {
-  width: 100%;
-  border-radius: var(--radius);
-  margin-bottom: 1em;
-}
-
-
-/* ------------------------------
-   BLOG CARDS
------------------------------- */
-
-.blog-card {
-  padding: 1.6em;
-  border-left: 6px solid var(--accent);
-}
-
-.blog-title {
-  font-size: 1.2rem;
-  margin-bottom: 0.3em;
-}
-
-
-/* ------------------------------
-   ABOUT PAGE
------------------------------- */
-
-.about {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.about-photo {
-  flex-shrink: 0;
-}
-
-.photo-oval {
-  width: 260px;
-  height: 340px;
-  background: linear-gradient(135deg, var(--accent2), var(--accent3));
-  border-radius: 50% / 40%;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow);
-}
-
-.photo-oval img {
-  width: 95%;
-  height: auto;
-  border-radius: 50% / 40%;
-}
-
-.about-text {
-  max-width: 600px;
-}
-
-
-/* ------------------------------
-   FOOTER
------------------------------- */
-
-.footer {
-  margin-top: 4rem;
-  padding: 2rem 0;
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-/* ------------------------------
-   ABOUT — COLLAGE LAYOUT
------------------------------- */
-
-.about-new {
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  margin-top: 2rem;
-}
-
-.collage {
-  width: 45%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 170px;
-  gap: 1rem;
-  position: relative;
-}
-
-.collage-item {
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-.collage-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* playful but polished staggering */
-.c1 { transform: rotate(-3deg); }
-.c2 { transform: rotate(2deg); }
-.c3 { transform: rotate(-2deg); }
-.c4 { transform: rotate(3deg); }
-
-.about-text-new {
-  width: 55%;
-  max-width: 550px;
-}
-
-.about-text-new h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-.about-text-new p {
-  margin-bottom: 1.2rem;
-  color: #505050;
-  font-size: 1rem;
+  color: #222;
+  background: #fafafa;
   line-height: 1.6;
 }
 
-/* responsive */
-@media (max-width: 900px) {
-  .about-new {
-    flex-direction: column;
-  }
-  .collage {
-    width: 100%;
-    grid-auto-rows: 150px;
-  }
-  .about-text-new {
-    width: 100%;
-  }
+/* Smooth fade-in */
+body {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+body.loaded {
+  opacity: 1;
 }
 
+a {
+  color: #1a4b8c;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------------------------------
+   LAYOUT
+------------------------
