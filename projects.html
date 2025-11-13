@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-page="projects">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,94 +9,27 @@
 
 <body>
 <header class="nav">
-  <div class="brand"><span class="brand-text">Elizabeth Baker</span></div>
+  <div class="brand"><a href="index.html">Elizabeth Baker</a></div>
   <nav class="links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html" data-link="projects">Projects</a>
+    <a href="index.html">About</a>
+    <a href="projects.html">Projects</a>
     <a href="writing.html">Writing</a>
   </nav>
 </header>
 
 <main class="wrap">
-<section class="section">
-<h1 class="sec-title">Projects</h1>
+  <section class="section">
+    <h1 class="sec-title">Projects</h1>
 
-<div class="projects-grid">
-
-  <!-- TOMO-FIT -->
-  <article class="project-card">
-    <img src="assets/tomo.jpg" class="project-thumb" alt="Tomo-Fit thumbnail">
-    <div class="project-text">
-      <h3>Tomo-Fit</h3>
-      <p>
-        A behavior-design framework for helping users build sustainable routines.  
-        Tomo-Fit blends habit psychology, progress visualization, and reflective prompts
-        to support long-term behavior change. Includes a technical architecture walkthrough,
-        app wireframes, and a user-testing report.
-      </p>
-      <a class="download-btn" href="tomo-fit.pdf" download>Download PDF</a>
+    <div class="cards">
+      <!-- all your project cards here -->
     </div>
-  </article>
+  </section>
+</main>
 
-  <!-- HEALTHCARE INEQUALITY ML MODEL -->
-  <article class="project-card">
-    <img src="assets/health.jpg" class="project-thumb" alt="Healthcare Inequality thumbnail">
-    <div class="project-text">
-      <h3>Healthcare Inequality Predictor</h3>
-      <p>
-        A machine-learning model analyzing disparities in preventative care outcomes across
-        demographic groups. Includes feature engineering, multi-class evaluation (91%
-        accuracy), and policy-oriented recommendations for increasing equitable access
-        to screening services.
-      </p>
-      <a class="download-btn" href="healthcare-inequality.pdf" download>Download PDF</a>
-    </div>
-  </article>
-
-  <!-- DIAMOND MODEL (NUMBER LINE / FRACTIONS / VIS STATS) -->
-  <article class="project-card">
-    <img src="assets/diamond.jpg" class="project-thumb" alt="Data visualization thumbnail">
-    <div class="project-text">
-      <h3>Number-Sense + Visualization Learning Modules</h3>
-      <p>
-        A set of movement-based and manipulatives-based math modules designed to strengthen
-        spatial reasoning, number-line intuition, and fraction sense. Includes side-by-side
-        visualizations, embodied-learning activities, and classroom integration strategies.
-      </p>
-      <a class="download-btn" href="number-line-walkabout.pdf" download>Download PDF</a>
-      <a class="download-btn" href="fraction-lab.pdf" download>Download Fraction Lab</a>
-    </div>
-  </article>
-
-  <!-- MUSESCORE GOVERNANCE -->
-  <article class="project-card">
-    <img src="assets/musescore.jpg" class="project-thumb" alt="MuseScore thumbnail">
-    <div class="project-text">
-      <h3>MuseScore Governance Analysis</h3>
-      <p>
-        A study examining how open-source creative communities make decisions at scale.
-        Focuses on stakeholder alignment, code-review workflows, and the evolution of
-        collaborative norms across product versions (including MuseScore 4.5).
-      </p>
-      <a class="download-btn" href="musescore-governance.pdf" download>Download PDF</a>
-    </div>
-  </article>
-
-  <!-- ELEGANCE JEWELERS STRATEGY -->
-  <article class="project-card">
-    <img src="assets/2.png" class="project-thumb" alt="Strategy study thumbnail">
-    <div class="project-text">
-      <h3>Elegance Jewelers — Strategy & Profitability</h3>
-      <p>
-        A quantitative decision-strategy analysis for a retail jewelry brand.  
-        Explores pricing structures, operational tradeoffs, and customer-behavior patterns
-        using scenario modeling and profit-sensitivity analysis.
-      </p>
-      <a class="download-btn" href="elegance-jewelers.pdf" download>Download PDF</a>
-    </div>
-  </article>
-
-  <!-- GARDENBEE PLATFORM -->
-  <article class="project-card">
-    <img src="assets/gardenbee.jpg" class="project-thumb" alt="Garden
+<footer class="footer">
+  <div class="wrap small">© <span id="year"></span> Elizabeth Baker</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
