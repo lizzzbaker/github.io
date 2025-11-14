@@ -1,161 +1,39 @@
-/* =========================
-   GLOBAL
-========================= */
-
-body {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  background: #faf8f9;
-  color: #222;
+/* --- Tags --- */
+.tag {
+  display: inline-block;
+  background: #ffd7ec;
+  color: #b02060;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-right: 6px;
+  margin-bottom: 6px;
 }
 
-.wrap {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-}
-
-h1, h3 {
-  font-family: Outfit, sans-serif;
-}
-
-/* =========================
-   NAVIGATION
-========================= */
-
-.nav {
+.tags {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 40px;
-  background: white;
-  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+  margin: 6px 0 10px;
 }
 
-.brand-text {
-  font-weight: 700;
-  font-size: 1.4rem;
-}
-
-.links a {
-  margin-left: 24px;
-  text-decoration: none;
-  color: #444;
-  font-weight: 500;
-  transition: 0.2s;
-}
-
-.links a:hover,
-.links a.active {
-  color: #ff4f9c;
-}
-
-/* =========================
-   ABOUT PAGE LAYOUT
-========================= */
-
-.about-section {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  padding: 60px 0;
-}
-
+/* About page collage images same size */
 .collage {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  width: 40%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
-.collage img {
+.about-img {
   width: 100%;
-  border-radius: 14px;
+  height: 180px;
   object-fit: cover;
-}
-
-.about-text {
-  width: 60%;
-}
-
-.contact-mini a {
-  color: #ff4f9c;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.contact-mini {
-  margin-top: 18px;
-  font-size: 0.95rem;
-  color: #777;
-}
-
-/* =========================
-   CARDS & THUMBNAILS
-========================= */
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 28px;
-  margin-top: 30px;
-}
-
-.card {
-  background: white;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-}
-
-.card img.thumb {
-  width: 100%;
   border-radius: 12px;
-  margin-bottom: 14px;
 }
 
-/* =========================
-   BUTTONS — PINK PILL
-========================= */
-
-.btn,
-.download-btn {
-  display: inline-block;
-  background: #ff82b2;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 999px;
+/* Contact details in pink */
+.contact-pink a {
+  color: #b02060;
   font-weight: 600;
   text-decoration: none;
-  margin-top: 10px;
-  transition: 0.25s;
-}
-
-.btn:hover {
-  background: #ff4f9c;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-  margin-top: 80px;
-  padding: 40px 0;
-  text-align: center;
-  color: #777;
-  font-size: 0.9rem;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 900px) {
-  .about-section {
-    flex-direction: column;
-  }
-  .collage, .about-text {
-    width: 100%;
-  }
 }
