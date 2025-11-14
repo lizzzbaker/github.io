@@ -1,33 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  const h = preact.h;
-  const html = htm.bind(h);
-  const { render, useState } = preact;
-
-
-/* Use global UMD bundles instead of ES module imports */
+/* ---------- Preact + HTM bindings ---------- */
 const html = htm.bind(preact.h);
 const { h, render, useState } = preact;
 
-
-/* ------------------------------
-   Fraction Melt & Stretch Lab
-   Converted to Preact + HTM
------------------------------- */
-
+/* ---------- Fraction Lab Config ---------- */
 const MAX_PIECES = 8;
 
 const pieceColors = [
-  "#ffb3c6",
-  "#ffc6ff",
-  "#bde0fe",
-  "#caffbf",
-  "#ffd6a5",
-  "#e0bbff",
-  "#f1c0e8",
-  "#a0c4ff"
+  "#ffb3c6", "#ffc6ff", "#bde0fe", "#caffbf",
+  "#ffd6a5", "#e0bbff", "#f1c0e8", "#a0c4ff"
 ];
 
+/* ---------- MAIN APP ---------- */
 function FractionMeltStretchLab() {
   const [denominator, setDenominator] = useState(2);
   const [isMelted, setIsMelted] = useState(true);
@@ -57,7 +40,7 @@ function FractionMeltStretchLab() {
           </p>
         </header>
 
-        <!-- MAIN MELT SECTION -->
+        <!-- MAIN MELT AREA -->
         <section class="fraction-card">
           <div class="card-title-row">
             <h2 class="card-title">Melt the Blob</h2>
@@ -129,13 +112,14 @@ function FractionMeltStretchLab() {
           </div>
         </section>
 
-        <!-- COMPARE FRACTIONS SECTION -->
+        <!-- COMPARISON SECTION -->
         ${FractionCompare({ denA, setDenA, denB, setDenB, compareAsBars, setCompareAsBars })}
       </div>
     </div>
   `;
 }
 
+/* ---------- Compare Section ---------- */
 function FractionCompare({ denA, setDenA, denB, setDenB, compareAsBars, setCompareAsBars }) {
   const explanation =
     denA === denB
@@ -188,6 +172,7 @@ function FractionCompare({ denA, setDenA, denB, setDenB, compareAsBars, setCompa
   `;
 }
 
+/* ---------- Picker ---------- */
 function FractionPicker({ label, denominator, onChange }) {
   return html`
     <div class="picker-card">
@@ -215,6 +200,7 @@ function FractionPicker({ label, denominator, onChange }) {
   `;
 }
 
+/* ---------- Mini Blob ---------- */
 function MiniBlob({ label, denominator }) {
   return html`
     <div class="mini-blob-card">
@@ -228,7 +214,6 @@ function MiniBlob({ label, denominator }) {
           ${Array.from({ length: denominator }).map(
             (_, idx) => html`
               <span
-                key=${idx}
                 class="mini-blob-dot"
                 style=${{
                   background:
@@ -245,8 +230,10 @@ function MiniBlob({ label, denominator }) {
   `;
 }
 
+/* ---------- Fraction Bar ---------- */
 function FractionBarRow({ tag, denominator }) {
   const widthPercent = (1 / denominator) * 100;
+
   return html`
     <div class="bar-row">
       <div class="bar-label">
@@ -260,7 +247,5 @@ function FractionBarRow({ tag, denominator }) {
   `;
 }
 
-/* Mount App */
+/* ---------- Mount App ---------- */
 render(html`<${FractionMeltStretchLab} />`, document.getElementById("app"));
-
-
