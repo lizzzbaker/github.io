@@ -1,111 +1,161 @@
-:root {
-  --pink: #e6a8ba; /* slightly darker than before */
-  --text: #222;
-  --muted: #555;
-  --radius: 10px;
-}
+/* =========================
+   GLOBAL
+========================= */
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
-  color: var(--text);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  font-family: Inter, sans-serif;
+  background: #faf8f9;
+  color: #222;
 }
 
-body.loaded {
-  opacity: 1;
+.wrap {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
 }
+
+h1, h3 {
+  font-family: Outfit, sans-serif;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 40px;
+  padding: 22px 40px;
+  background: white;
+  border-bottom: 1px solid #eee;
 }
 
-.brand a {
-  font-size: 22px;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--text);
+.brand-text {
+  font-weight: 700;
+  font-size: 1.4rem;
 }
 
 .links a {
-  margin-left: 28px;
+  margin-left: 24px;
   text-decoration: none;
-  color: var(--text);
-  font-size: 15px;
+  color: #444;
+  font-weight: 500;
+  transition: 0.2s;
 }
 
-.wrap {
-  width: min(900px, 92%);
-  margin: auto;
+.links a:hover,
+.links a.active {
+  color: #ff4f9c;
 }
 
-.section {
-  margin-top: 40px;
+/* =========================
+   ABOUT PAGE LAYOUT
+========================= */
+
+.about-section {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 60px 0;
 }
 
 .collage {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin-bottom: 30px;
+  width: 40%;
 }
 
 .collage img {
   width: 100%;
-  border-radius: var(--radius);
+  border-radius: 14px;
+  object-fit: cover;
 }
 
-.about-text h1 {
-  margin-bottom: 12px;
+.about-text {
+  width: 60%;
 }
 
-.about-text p {
-  line-height: 1.6;
-  margin-bottom: 18px;
-  max-width: 620px;
+.contact-mini a {
+  color: #ff4f9c;
+  text-decoration: none;
+  font-weight: 600;
 }
+
+.contact-mini {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* =========================
+   CARDS & THUMBNAILS
+========================= */
 
 .cards {
   display: grid;
-  gap: 20px;
-}
-
-.two-col {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 28px;
+  margin-top: 30px;
 }
 
 .card {
-  background: #fff;
-  border-radius: var(--radius);
-  border: 1px solid #eee;
-  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
 
-.pad {
-  padding: 20px;
+.card img.thumb {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 14px;
 }
 
-.view-btn {
+/* =========================
+   BUTTONS — PINK PILL
+========================= */
+
+.btn,
+.download-btn {
   display: inline-block;
-  margin-top: 8px;
-  padding: 8px 14px;
-  background: var(--pink);
+  background: #ff82b2;
   color: white;
-  border-radius: var(--radius);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 14px;
+  margin-top: 10px;
+  transition: 0.25s;
 }
+
+.btn:hover {
+  background: #ff4f9c;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
-  text-align: center;
+  margin-top: 80px;
   padding: 40px 0;
-  margin-top: 40px;
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
 }
 
-.muted {
-  color: var(--muted);
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+  }
+  .collage, .about-text {
+    width: 100%;
+  }
 }
