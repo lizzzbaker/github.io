@@ -235,3 +235,13 @@ body.loaded {
     font-size: 1.8rem;
   }
 }
+
+/* Stronger highlight rule */
+button.opBtn.active {
+  background: #ffe0f2 !important;
+  border-color: #ff9cd3 !important;
+  color: #b02060 !important;
+  font-weight: 700;
+  box-shadow: 0 0 0 2px #ffb8de66;
+  transform: translateY(-1px);
+}
