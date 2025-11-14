@@ -1,6 +1,7 @@
-/* ---------- Preact + HTM bindings ---------- */
-const html = htm.bind(preact.h);
-const { h, render, useState } = preact;
+/* ---------- Preact + HTM bindings (UMD globals) ---------- */
+const { h, render, useState } = window.preact;
+const html = window.htm.bind(h);
+
 
 /* ---------- Fraction Lab Config ---------- */
 const MAX_PIECES = 8;
