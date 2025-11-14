@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+  const h = preact.h;
+  const html = htm.bind(h);
+  const { render, useState } = preact;
+
+
 /* Use global UMD bundles instead of ES module imports */
 const html = htm.bind(preact.h);
 const { h, render, useState } = preact;
@@ -254,4 +261,6 @@ function FractionBarRow({ tag, denominator }) {
 }
 
 /* Mount App */
-render(h(FractionMeltStretchLab, {}), document.getElementById("app"));
+render(html`<${FractionMeltStretchLab} />`, document.getElementById("app"));
+
+
