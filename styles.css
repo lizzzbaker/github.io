@@ -1,4 +1,120 @@
-/* --- Tags --- */
+/* ----------------------------------------------------
+   GLOBAL RESET & BASE
+---------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Inter", system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #faf9fb;
+  color: #222;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+/* ----------------------------------------------------
+   LAYOUT HELPERS
+---------------------------------------------------- */
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.wrap.small {
+  max-width: 700px;
+}
+
+/* ----------------------------------------------------
+   HEADER / NAVIGATION
+---------------------------------------------------- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 40px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.brand-text {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.5px;
+}
+
+.links a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.links a:hover,
+.links a.active {
+  color: #b02060;
+}
+
+/* ----------------------------------------------------
+   TITLES / HEADERS
+---------------------------------------------------- */
+.sec-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.muted {
+  color: #666;
+}
+
+/* ----------------------------------------------------
+   CARDS (projects, writing)
+---------------------------------------------------- */
+.cards {
+  margin-top: 30px;
+  display: grid;
+  gap: 26px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 26px;
+  border: 1px solid #eee;
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  border-color: #ffc2df;
+  transform: translateY(-2px);
+}
+
+/* Generic thumbnails */
+.thumb {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+/* ----------------------------------------------------
+   TAGS
+---------------------------------------------------- */
 .tag {
   display: inline-block;
   background: #ffd7ec;
@@ -14,26 +130,111 @@
 .tags {
   display: flex;
   flex-wrap: wrap;
-  margin: 6px 0 10px;
+  margin: 8px 0 12px;
 }
 
-/* About page collage images same size */
+/* ----------------------------------------------------
+   BUTTONS
+---------------------------------------------------- */
+.btn {
+  display: inline-block;
+  background: #b02060;
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: #8a0f4b;
+}
+
+/* Secondary button (pink outline) */
+.btn-outline {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 2px solid #b02060;
+  color: #b02060;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* ----------------------------------------------------
+   ABOUT PAGE — COLLAGE
+---------------------------------------------------- */
 .collage {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .about-img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
-/* Contact details in pink */
+/* ----------------------------------------------------
+   CONTACT PAGE
+---------------------------------------------------- */
 .contact-pink a {
   color: #b02060;
   font-weight: 600;
   text-decoration: none;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  width: 100%;
+}
+
+/* ----------------------------------------------------
+   FOOTER
+---------------------------------------------------- */
+.footer {
+  background: #fff;
+  border-top: 1px solid #eee;
+  padding: 20px 0;
+  margin-top: 60px;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE
+---------------------------------------------------- */
+@media (max-width: 700px) {
+  .nav {
+    padding: 20px;
+  }
+
+  .links a {
+    margin-left: 14px;
+  }
+
+  .thumb {
+    height: 150px;
+  }
+
+  .sec-title {
+    font-size: 1.8rem;
+  }
 }
