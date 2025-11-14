@@ -1,6 +1,7 @@
 /* Use global UMD bundles instead of ES module imports */
-const { html } = htm;
+const html = htm.bind(preact.h);
 const { h, render, useState } = preact;
+
 
 /* ------------------------------
    Fraction Melt & Stretch Lab
