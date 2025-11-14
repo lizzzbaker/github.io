@@ -1,14 +1,11 @@
-import { html } from "https://unpkg.com/htm@3.1.1/dist/htm.module.js";
-import {
-  h,
-  render,
-  useState
-} from "https://unpkg.com/preact@10.19.2/dist/preact.module.js";
+/* Use global UMD bundles instead of ES module imports */
+const { html } = htm;
+const { h, render, useState } = preact;
 
 /* ------------------------------
    Fraction Melt & Stretch Lab
    Converted to Preact + HTM
-   ------------------------------ */
+------------------------------ */
 
 const MAX_PIECES = 8;
 
@@ -46,8 +43,10 @@ function FractionMeltStretchLab() {
             <h1>Fraction Melt & Stretch Lab</h1>
             <span class="age-tag">Best for grades 2–4</span>
           </div>
-          <p>Make fractions feel squishy and alive! Melt one blob into equal pieces,
-          then stretch them into bars to compare how big each fraction really is.</p>
+          <p>
+            Make fractions feel squishy and alive! Melt one blob into equal pieces,
+            then stretch them into bars to compare how big each fraction really is.
+          </p>
         </header>
 
         <!-- MAIN MELT SECTION -->
@@ -59,8 +58,6 @@ function FractionMeltStretchLab() {
 
           <div class="lab-layout">
             <div class="lab-visual">
-
-              <!-- Blob Stage -->
               <div class=${"blob-stage " + (isMelted ? "blob-stage--melted" : "blob-stage--whole")}>
 
                 <!-- Whole Blob -->
@@ -89,7 +86,10 @@ function FractionMeltStretchLab() {
               </div>
 
               <div class="lab-buttons-row">
-                <button class="pill-btn pill-btn--primary" onClick=${() => setIsMelted(!isMelted)}>
+                <button
+                  class="pill-btn pill-btn--primary"
+                  onClick=${() => setIsMelted(!isMelted)}
+                >
                   ${isMelted ? "Fuse back to 1 whole" : "Melt into pieces"}
                 </button>
               </div>
@@ -108,7 +108,9 @@ function FractionMeltStretchLab() {
                   value=${denominator}
                   onInput=${handleMainSlider}
                 />
-                <div class="slider-value"><span class="slider-pill">1/${denominator}</span></div>
+                <div class="slider-value">
+                  <span class="slider-pill">1/${denominator}</span>
+                </div>
               </div>
 
               <div class="readout-card">
@@ -119,7 +121,7 @@ function FractionMeltStretchLab() {
           </div>
         </section>
 
-        <!-- COMPARE FRACTIONS -->
+        <!-- COMPARE FRACTIONS SECTION -->
         ${FractionCompare({ denA, setDenA, denB, setDenB, compareAsBars, setCompareAsBars })}
       </div>
     </div>
@@ -148,12 +150,14 @@ function FractionCompare({ denA, setDenA, denB, setDenB, compareAsBars, setCompa
         </div>
 
         <div class="compare-actions">
-          <button class="pill-btn pill-btn--ghost" onClick=${() => setCompareAsBars(!compareAsBars)}>
+          <button
+            class="pill-btn pill-btn--ghost"
+            onClick=${() => setCompareAsBars(!compareAsBars)}
+          >
             ${compareAsBars ? "Show as blobs" : "Compare as bars"}
           </button>
         </div>
 
-        <!-- VISUAL -->
         <div class="compare-visual">
           ${compareAsBars
             ? html`
@@ -196,7 +200,9 @@ function FractionPicker({ label, denominator, onChange }) {
         onInput=${(e) => onChange(Number(e.target.value))}
       />
 
-      <p class="picker-note">This blob is broken into <strong>${denominator}</strong> equal parts.</p>
+      <p class="picker-note">
+        This blob is broken into <strong>${denominator}</strong> equal parts.
+      </p>
     </div>
   `;
 }
