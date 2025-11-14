@@ -3,37 +3,56 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elizabeth Baker — Home</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>About — Elizabeth Baker</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <header class="nav">
     <div class="brand"><span class="brand-text">Elizabeth Baker</span></div>
     <nav class="links">
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">About</a>
       <a href="projects.html">Projects</a>
       <a href="writing.html">Writing</a>
-      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main class="wrap">
-    <section class="section about-new">
+    <section class="about-section">
 
       <div class="collage">
-        <div class="collage-item c1"><img src="assets/portrait1.jpg" alt="Elizabeth smiling with a thumbs up"></div>
-        <div class="collage-item c2"><img src="assets/portrait2.jpg" alt="Elizabeth at a cafe"></div>
-        <div class="collage-item c3"><img src="assets/portrait3.jpg" alt="Elizabeth at the beach walkway"></div>
-        <div class="collage-item c4"><img src="assets/portrait4.png" alt="Elizabeth outdoors portrait"></div>
+        <img src="assets/portrait1.jpg" class="c1">
+        <img src="assets/portrait2.jpg" class="c2">
+        <img src="assets/portrait3.jpg" class="c3">
+        <img src="assets/portrait4.png" class="c4">
       </div>
 
-      <div class="about-text-new">
+      <div class="about-text">
         <h1>Hi, I’m Elizabeth.</h1>
-        <p>I design learning experiences, interfaces, and educational tools that help children think more clearly and creatively in a world shaped by technology.</p>
-        <p>My work blends learning sciences, human–computer interaction, and curriculum design. I care deeply about making educational tools feel intuitive, warm, and accessible — especially for neurodivergent learners.</p>
-        <p>This portfolio is where I explore ideas, share prototypes, and build small experiments as I prepare for doctoral study.</p>
+
+        <p>
+          I design learning experiences, interfaces, and educational tools that help children
+          think more clearly and creatively in a world shaped by technology. I’m especially
+          interested in how curiosity, attention, and early cognitive habits develop, and how
+          well-designed environments can support a wide range of learners.
+        </p>
+
+        <p>
+          My work blends learning sciences, human–computer interaction, and curriculum design.
+          I care deeply about making educational tools feel intuitive, warm, and accessible—
+          especially for neurodivergent learners whose needs are often ignored or oversimplified.
+        </p>
+
+        <p>
+          This portfolio is a place where I explore ideas, share prototypes, and build small
+          experiments that reflect the questions I’m currently pursuing as I prepare for doctoral study.
+        </p>
+
+        <div class="contact-mini">
+          <a href="mailto:lizzie.baker10@gmail.com">lizzie.baker10@gmail.com</a> •
+          <a href="tel:+12487572290">248-757-2290</a>
+        </div>
       </div>
 
     </section>
@@ -42,6 +61,7 @@
   <footer class="footer">
     <div class="wrap small">© <span id="year"></span> Elizabeth Baker</div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
