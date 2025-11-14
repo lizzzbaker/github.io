@@ -2,29 +2,156 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Math as Motion — Interactive Prototype</title>
+  <title>Math as Motion — Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- React + ReactDOM -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-
-  <!-- Framer Motion -->
-  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
-
   <style>
-    body { font-family: system-ui, sans-serif; }
+    .fade-scale {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.18s ease-out, transform 0.18s ease-out;
+    }
+    .fade-scale.show {
+      opacity: 1;
+      transform: scale(1);
+    }
   </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-100 via-sky-100 to-violet-100">
+<body class="min-h-screen bg-gradient-to-b from-pink-100 via-sky-100 to-violet-100
+             flex items-center justify-center px-3 py-6">
 
-  <div id="root" class="w-full"></div>
+  <div class="w-full max-w-4xl bg-white/95 backdrop-blur-xl rounded-[32px]
+              border border-pink-100 shadow-2xl p-4 md:p-6 flex flex-col gap-4">
 
-  <!-- External JS file -->
+    <!-- HEADER -->
+    <header class="flex items-center justify-between gap-3">
+      <div>
+        <h1 class="text-3xl font-extrabold text-slate-900">Math as Motion</h1>
+        <p class="text-xs md:text-sm text-slate-600 max-w-xs mt-1">
+          Drag friends into groups, choose a magic move, then press play.
+        </p>
+      </div>
+      <div class="hidden md:flex flex-col items-end text-[0.7rem] text-slate-500">
+        <span>K–3 play mode</span>
+        <span>Visual addition & subtraction</span>
+      </div>
+    </header>
+
+    <!-- FRIEND PALETTE -->
+    <section class="bg-gradient-to-r from-white via-pink-50 to-pink-100 rounded-[24px]
+                    border border-pink-100 shadow-md p-4 flex flex-col gap-2">
+
+      <div class="flex items-center justify-between">
+        <span class="text-sm font-bold text-slate-800">1. Choose friends</span>
+        <span class="text-[0.7rem] text-slate-500">Drag or tap to add.</span>
+      </div>
+
+      <div id="palette" class="flex flex-wrap gap-2 mt-1"></div>
+
+      <div class="flex gap-2 text-[0.7rem] mt-2">
+        <button id="clearBtn"
+          class="px-3 py-1.5 rounded-full border bg-white text-slate-600">
+          Clear
+        </button>
+        <button id="resetBtn"
+          class="px-3 py-1.5 rounded-full border border-pink-300 bg-pink-50 text-pink-800">
+          Reset
+        </button>
+        <button id="undoBtn"
+          class="px-3 py-1.5 rounded-full border bg-slate-50 text-slate-700 opacity-50"
+          disabled>
+          Undo
+        </button>
+      </div>
+    </section>
+
+    <!-- PLAYGROUND -->
+    <section class="flex flex-col md:flex-row gap-4">
+
+      <!-- LEFT + RIGHT + RESULT -->
+      <div class="flex-1 bg-gradient-to-br from-white via-sky-50 to-violet-50
+                  rounded-[24px] border border-sky-100 shadow-md p-3 flex flex-col gap-3">
+
+        <!-- Groups -->
+        <div class="flex items-center gap-3">
+
+          <div class="flex-1" data-slot="left">
+            <div class="text-[0.7rem] font-bold text-slate-600 mb-1 uppercase flex justify-between">
+              <span>Group A</span>
+              <span id="leftCount" class="text-slate-400"></span>
+            </div>
+            <div id="leftSlot"
+                 class="min-h-[110px] bg-white/90 rounded-3xl border border-slate-200
+                        shadow-inner p-3 flex flex-wrap gap-2 justify-center"></div>
+          </div>
+
+          <div class="text-pink-500 font-extrabold text-3xl min-w-[34px] text-center" id="opSymbol">+</div>
+
+          <div class="flex-1" data-slot="right">
+            <div class="text-[0.7rem] font-bold text-slate-600 mb-1 uppercase flex justify-between">
+              <span>Group B</span>
+              <span id="rightCount" class="text-slate-400"></span>
+            </div>
+            <div id="rightSlot"
+                 class="min-h-[110px] bg-white/90 rounded-3xl border border-slate-200
+                        shadow-inner p-3 flex flex-wrap gap-2 justify-center"></div>
+          </div>
+
+        </div>
+
+        <!-- Result -->
+        <div class="flex items-center gap-3">
+          <div class="text-slate-500 text-2xl">=</div>
+          <div class="flex-1">
+            <div class="text-[0.7rem] font-bold text-slate-600 mb-1 uppercase flex justify-between">
+              <span>New group</span>
+              <span id="resultCount" class="text-slate-400"></span>
+            </div>
+            <div id="resultSlot"
+                 class="min-h-[110px] bg-white/90 rounded-3xl border border-slate-200
+                        shadow-inner p-3 flex flex-wrap gap-2 justify-center"></div>
+          </div>
+        </div>
+
+        <!-- Say it with numbers -->
+        <div class="text-[0.75rem] text-slate-700 bg-white/95 rounded-2xl border p-3">
+          <span class="font-semibold text-slate-800">Say it with numbers:</span>
+          <span id="numberSentence"></span>
+        </div>
+
+        <div class="text-[0.7rem] text-slate-600" id="explanation"></div>
+
+      </div>
+
+      <!-- OPERATION PANEL -->
+      <div class="w-full md:w-56 bg-gradient-to-r from-white via-sky-50 to-sky-100
+                  rounded-[24px] border border-sky-100 shadow-md p-4 flex flex-col gap-2">
+
+        <span class="text-sm font-bold text-slate-800">Magic move</span>
+
+        <div class="grid grid-cols-2 gap-2 my-1">
+          <button class="opBtn px-3 py-2 rounded-3xl border bg-white"
+                  data-op="+">+
+          </button>
+          <button class="opBtn px-3 py-2 rounded-3xl border bg-white"
+                  data-op="-">−
+          </button>
+        </div>
+
+        <button id="playBtn"
+          class="mt-2 w-full py-2 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-violet-500
+                 text-white text-sm font-extrabold shadow-md active:scale-[0.97] transition">
+          ▶ Play the move
+        </button>
+      </div>
+    </section>
+
+  </div>
+
   <script src="math-as-motion.js"></script>
 </body>
 </html>
