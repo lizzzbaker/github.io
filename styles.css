@@ -28,7 +28,7 @@ body.loaded {
    LAYOUT HELPERS
 ---------------------------------------------------- */
 .wrap {
-  max-width: 900px;
+  max-width: 1200px;  /* <--- widened from 900px */
   margin: 0 auto;
   padding: 40px 20px;
 }
@@ -82,7 +82,7 @@ body.loaded {
 }
 
 /* ----------------------------------------------------
-   ABOUT PAGE — NEW GRID LAYOUT
+   ABOUT PAGE — GRID LAYOUT
 ---------------------------------------------------- */
 .about-grid {
   display: grid;
@@ -101,7 +101,7 @@ body.loaded {
 
 .about-img {
   width: 100%;
-  height: 340px;    
+  height: 240px;   /* square-ish */
   object-fit: cover;
   border-radius: 14px;
 }
