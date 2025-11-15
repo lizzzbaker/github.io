@@ -1,93 +1,97 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html, body {
+body {
   margin: 0;
-  padding: 0;
   font-family: system-ui, sans-serif;
-  background: linear-gradient(to bottom, #fdf4ff, #e4f3ff);
-  height: 100%;
+  background: linear-gradient(to bottom, #f7efff, #e8f5ff);
+  text-align: center;
+  padding: 20px;
 }
 
-/* HEADER */
-.app-header {
-  text-align: center;
-  margin-top: 20px;
+h1 {
+  margin-top: 10px;
+  font-size: 2.4rem;
 }
 
 .subtitle {
+  margin: 0;
   color: #6f7aa3;
-  margin-top: 4px;
 }
 
-/* MAIN LAYOUT */
-.app-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-}
-
-/* FORTUNE BALL */
+/* BALL */
 .fortune-ball {
-  width: 360px;
-  height: 360px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #444 0%, #111 70%, black 100%);
+  background: radial-gradient(circle at center, #222 0%, #111 70%);
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow:
-    0 0 40px rgba(255, 255, 255, 0.25),
-    inset 0 0 80px rgba(255, 255, 255, 0.12);
   color: white;
-  text-align: center;
   padding: 30px;
+  transition: box-shadow 0.6s ease, background 0.4s ease;
 }
 
-.ball-label {
-  font-size: 1.4rem;
-  font-weight: 600;
-  opacity: 0.9;
-  margin-bottom: 10px;
-}
-
-.ball-text {
+/* TEXT INSIDE */
+#ballLabel {
   font-size: 1.5rem;
-  max-width: 260px;
-  line-height: 1.3;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+#ballText {
+  font-size: 1.6rem;
+  max-width: 300px;
+  line-height: 1.4;
+}
+
+.follow {
+  display: block;
+  margin-top: 16px;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+/* GLOW COLORS */
+.glow-whatif {
+  box-shadow: 0 0 40px #ff5c99, 0 0 90px #ff5c99aa;
+}
+
+.glow-imagine {
+  box-shadow: 0 0 40px #4cd964, 0 0 90px #4cd964aa;
+}
+
+.glow-wonder {
+  box-shadow: 0 0 40px #4da3ff, 0 0 90px #4da3ffaa;
+}
+
+.glow-riddle {
+  box-shadow: 0 0 40px #ffcc33, 0 0 90px #ffcc33aa;
 }
 
 /* SPIN ANIMATION */
-.fortune-ball.spinning {
-  animation: spinAnim 0.7s ease-out;
+.spinning {
+  animation: spin 0.7s ease-out;
 }
 
-@keyframes spinAnim {
-  from { transform: rotate(0deg) scale(1); }
-  to   { transform: rotate(720deg) scale(1.03); }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 /* BUTTON */
-.spin-button {
-  margin-top: 26px;
-  padding: 14px 36px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 100px;
+#spinButton {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 40px;
   color: white;
-  background: linear-gradient(135deg, #ff7fb0, #ffb37e);
+  background: linear-gradient(135deg, #ff82b5, #ffb37e);
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-top: 10px;
 }
 
-/* FOOTER */
-.app-footer {
-  margin-top: 30px;
-  color: #666;
+/* Remove clutter text */
+small, label {
+  display: none !important;
 }
