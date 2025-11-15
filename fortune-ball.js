@@ -103,23 +103,29 @@ function chooseRandomCategory() {
 }
 
 /* SHOW PROMPT */
-function showPrompt(category) { 
+function showPrompt(category) {
   const chosen = pickRandom(prompts[category]);
-  const followSmall = `<small>${chosen.follow}</small>`;
-  const combined = `${chosen.text}\n${followSmall}`;
+  const combined = `${chosen.text}\n${chosen.follow}`;
 
-  // Label
   ballLabel.textContent = chosen.label;
+  ballText.textContent = combined;
 
-  // Prompt + small follow-up
-  ballText.innerHTML = combined;
+  document.getElementById("promptLabel").textContent = chosen.label;
+  document.getElementById("promptText").textContent = combined;
 
   // Remove existing glows
-  fortuneBall.classList.remove("glow-whatif", "glow-imagine", "glow-wonder");
+  fortuneBall.classList.remove("glow-imagine", "glow-whatif", "glow-wonder");
 
-  // Add category glow
-  fortuneBall.classList.add(`glow-${category}`);
+  // Add glow based on category
+  if (category === "imagine") {
+    fortuneBall.classList.add("glow-imagine");
+  } else if (category === "whatif") {
+    fortuneBall.classList.add("glow-whatif");
+  } else if (category === "wonder") {
+    fortuneBall.classList.add("glow-wonder");
+  }
 }
+
 
 /* SPIN */
 spinBtn.addEventListener("click", () => {
