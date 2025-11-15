@@ -1,82 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Curiosity Compass – K–1</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="compass.css" />
-</head>
-
-<body>
-  <div class="app">
-    <header class="app-header">
-      <h1>Curiosity Compass</h1>
-      <p class="subtitle">Spark K–1 imagination & talk time</p>
-    </header>
-
-    <main class="app-main">
-      <section class="compass-section">
-        <div class="compass-wrapper">
-          <!-- Pointer -->
-          <div class="compass-pointer" aria-hidden="true"></div>
-
-          <!-- Wheel -->
-          <div class="compass-ring" id="compassRing">
-
-            <!-- Correct class names for labels -->
-            <div class="compass-label label-top">What if…</div>
-            <div class="compass-label label-right">Imagine</div>
-            <div class="compass-label label-bottom">Wonder</div>
-            <div class="compass-label label-left">Riddle</div>
-
-            <div class="compass-center">
-              <span class="center-mark">?</span>
-            </div>
-          </div>
-        </div>
-
-        <button id="spinButton" class="spin-button">Spin the Compass</button>
-
-        <div class="controls">
-          <label for="promptType">Prompt type:</label>
-          <select id="promptType">
-            <option value="mixed">Mixed</option>
-            <option value="whatif">“What if…”</option>
-            <option value="riddle">Riddles</option>
-          </select>
-        </div>
-      </section>
-
-      <section class="prompt-section">
-        <div class="prompt-card" aria-live="polite">
-          <p class="prompt-tag" id="promptLabel">Ready to spin!</p>
-
-          <p class="prompt-text" id="promptText">
-            Tap “Spin the Compass” and read the prompt aloud to your class.
-          </p>
-
-          <p class="prompt-tip" id="teacherTip">
-            Teacher tip: Ask students to “turn and talk” after each prompt.
-          </p>
-        </div>
-
-        <div class="quick-instructions">
-          <h2>How to use in class</h2>
-          <ul>
-            <li>1. Tap <strong>Spin</strong>.</li>
-            <li>2. Read the prompt out loud.</li>
-            <li>3. Give 20–60 seconds for think or partner talk.</li>
-            <li>4. Invite students to share ideas.</li>
-          </ul>
-        </div>
-      </section>
-    </main>
-
-    <footer class="app-footer">
-      <span>Version: K–1 • Curiosity & discussion prompts</span>
-    </footer>
+<section class="compass-section">
+  <div class="fortune-ball" id="fortuneBall">
+    <div class="fortune-text">
+      <span class="fortune-label" id="fortuneLabel">Ready?</span>
+      <p class="fortune-prompt" id="fortunePrompt">Tap spin!</p>
+    </div>
   </div>
 
-  <script src="compass.js"></script>
-</body>
-</html>
+  <button id="spinButton" class="spin-button">Reveal the Prompt</button>
+
+  <div class="controls">
+    <label for="promptType">Prompt type:</label>
+    <select id="promptType">
+      <option value="mixed">Mixed</option>
+      <option value="whatif">“What if…”</option>
+      <option value="riddle">Riddles</option>
+    </select>
+  </div>
+</section>
