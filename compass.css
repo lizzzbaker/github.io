@@ -1,0 +1,210 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #ffe9fb 0%, #fdfbff 40%, #e1f5ff 100%);
+  color: #243145;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.app-header h1 {
+  margin: 4px 0;
+  font-size: 2rem;
+  color: #27325a;
+}
+
+.subtitle {
+  margin: 0;
+  color: #6f7aa3;
+}
+
+.app-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Compass Section */
+.compass-section {
+  flex: 1 1 280px;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.compass-wrapper {
+  position: relative;
+  width: 260px;
+  height: 260px;
+}
+
+.compass-pointer {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 18px solid #f06c9b;
+  z-index: 2;
+}
+
+.compass-ring {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ffe3f1 0deg 90deg,
+    #e2f4ff 90deg 180deg,
+    #fff7da 180deg 270deg,
+    #e6f9eb 270deg 360deg
+  );
+  border: 6px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.compass-label {
+  position: absolute;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #455070;
+}
+
+.compass-label.top { top: 12px; left: 50%; transform: translateX(-50%); }
+.compass-label.bottom { bottom: 12px; left: 50%; transform: translateX(-50%); }
+.compass-label.left { left: 16px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+.compass-label.right { right: 16px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+
+.compass-center {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff, #ffe6f3 50%);
+  border: 4px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-mark {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f0488a;
+}
+
+.compass-ring.spinning {
+  animation: spinCompass 1s ease-out;
+}
+
+@keyframes spinCompass {
+  0% { transform: rotate(0deg); }
+  80% { transform: rotate(740deg); }
+  100% { transform: rotate(720deg); }
+}
+
+/* Button */
+.spin-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ff7db7, #ffaf7b);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.controls {
+  margin-top: 12px;
+  display: flex;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.controls select {
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Prompt Card */
+.prompt-section {
+  flex: 1 1 280px;
+  max-width: 440px;
+}
+
+.prompt-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.prompt-tag {
+  font-size: 0.8rem;
+  color: #f26b96;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.prompt-text {
+  font-size: 1.05rem;
+  margin: 6px 0;
+}
+
+.prompt-tip {
+  font-size: 0.9rem;
+  color: #6e7a95;
+}
+
+.quick-instructions {
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 12px;
+  border-radius: 16px;
+}
+
+.quick-instructions h2 {
+  font-size: 1rem;
+  margin: 0 0 4px;
+}
+
+.quick-instructions ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.9rem;
+}
+
+.app-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 22px;
+  color: #7a85a4;
+}
