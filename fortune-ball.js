@@ -103,7 +103,7 @@ function chooseRandomCategory() {
 }
 
 /* SHOW PROMPT */
-function showPrompt(category) {
+function showPrompt(category) { 
   const chosen = pickRandom(prompts[category]);
   const followSmall = `<small>${chosen.follow}</small>`;
   const combined = `${chosen.text}\n${followSmall}`;
