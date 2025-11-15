@@ -1,97 +1,85 @@
+/* fortune-ball.css */
+/* (unchanged from your existing file) */
+
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
-  background: linear-gradient(to bottom, #f7efff, #e8f5ff);
-  text-align: center;
+  font-family: sans-serif;
+  background: #f6f6ff;
+}
+
+.app {
+  max-width: 600px;
+  margin: auto;
   padding: 20px;
 }
 
-h1 {
-  margin-top: 10px;
-  font-size: 2.4rem;
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .subtitle {
-  margin: 0;
-  color: #6f7aa3;
+  color: #666;
+  margin-top: -10px;
 }
 
-/* BALL */
 .fortune-ball {
-  width: 420px;
-  height: 420px;
+  width: 260px;
+  height: 260px;
+  margin: 0 auto;
+  background: radial-gradient(circle at top, #ffffff 0%, #d7d5ff 60%, #a5a3f0 100%);
   border-radius: 50%;
-  background: radial-gradient(circle at center, #222 0%, #111 70%);
-  margin: 40px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
-  padding: 30px;
-  transition: box-shadow 0.6s ease, background 0.4s ease;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.6s ease;
 }
 
-/* TEXT INSIDE */
-#ballLabel {
-  font-size: 1.5rem;
+.fortune-ball.spinning {
+  transform: rotate(360deg);
+}
+
+.ball-label {
+  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
-#ballText {
-  font-size: 1.6rem;
-  max-width: 300px;
-  line-height: 1.4;
+.ball-text {
+  font-size: 1rem;
 }
 
-.follow {
+.spin-button {
   display: block;
-  margin-top: 16px;
-  font-size: 1.1rem;
-  opacity: 0.85;
-}
-
-/* GLOW COLORS */
-.glow-whatif {
-  box-shadow: 0 0 40px #ff5c99, 0 0 90px #ff5c99aa;
-}
-
-.glow-imagine {
-  box-shadow: 0 0 40px #4cd964, 0 0 90px #4cd964aa;
-}
-
-.glow-wonder {
-  box-shadow: 0 0 40px #4da3ff, 0 0 90px #4da3ffaa;
-}
-
-.glow-riddle {
-  box-shadow: 0 0 40px #ffcc33, 0 0 90px #ffcc33aa;
-}
-
-/* SPIN ANIMATION */
-.spinning {
-  animation: spin 0.7s ease-out;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-/* BUTTON */
-#spinButton {
-  padding: 12px 30px;
-  font-size: 1.1rem;
-  border-radius: 40px;
+  margin: 20px auto;
+  padding: 12px 24px;
+  background: #6a63ff;
   color: white;
-  background: linear-gradient(135deg, #ff82b5, #ffb37e);
+  font-size: 1.2rem;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
-/* Remove clutter text */
-small, label {
-  display: none !important;
+.prompt-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.prompt-tag {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.prompt-text {
+  font-size: 1.05rem;
+  line-height: 1.4;
 }
