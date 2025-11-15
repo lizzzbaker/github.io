@@ -1,5 +1,6 @@
-/* GLOBAL RESET */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -10,7 +11,6 @@ html, body {
   background: linear-gradient(to bottom, #fdf7ff, #e8f7ff);
 }
 
-/* APP LAYOUT */
 .app {
   padding: 20px;
   display: flex;
@@ -18,137 +18,74 @@ html, body {
   align-items: center;
 }
 
+/* HEADER */
 .app-header {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .subtitle {
+  margin: 0;
   color: #6f7aa3;
 }
 
-/* MAIN */
+/* LAYOUT */
 .app-main {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 40px;
   justify-content: center;
 }
 
-/* COMPASS SECTION */
-.compass-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.compass-wrapper {
-  width: 300px;
-  height: 300px;
-  position: relative;
-}
-
-/* POINTER */
-.compass-pointer {
-  position: absolute;
-  top: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 18px solid transparent;
-  border-right: 18px solid transparent;
-  border-top: 32px solid #ff6fa8;
-  z-index: 5;
-}
-
-/* WHEEL */
-.compass-ring {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 6px solid white;
-  position: relative;
-  background: conic-gradient(
-    #ffe8f3 0deg 90deg,     /* What if */
-    #e3f3ff 90deg 180deg,   /* Imagine */
-    #fef6d8 180deg 270deg,  /* Wonder */
-    #e7f9e8 270deg 360deg   /* Riddle */
-  );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: visible;
-}
-
-/* CENTER CIRCLE — FIXED SMALLER */
-.compass-center {
-  width: 80px;
-  height: 80px;
+/* FORTUNE BALL */
+.fortune-ball {
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   background: white;
-  border: 5px solid #ffdef0;
+  border: 8px solid #ffd8ec;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 4; /* ABOVE labels but small enough not to block them */
-}
-
-.center-mark {
-  font-size: 2rem;
-  color: #ff5c99;
-}
-
-/* LABELS — FULLY FIXED */
-.compass-label {
-  position: absolute;
-  font-weight: 700;
-  color: #3b4760;
-  font-size: 1.15rem;
-  width: 120px;
+  padding: 20px;
   text-align: center;
-  pointer-events: none;
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 
-/* Top slice (centered at 45° of pink slice) */
-.label-top {
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+/* Category color themes */
+.fortune-whatif { background: #ffe8f3; border-color: #ffbcd9; }
+.fortune-imagine { background: #e3f3ff; border-color: #bcdfff; }
+.fortune-wonder { background: #fff6d8; border-color: #ffeaaa; }
+.fortune-riddle { background: #e7f9e8; border-color: #b7f3bb; }
+
+/* Fortune ball text */
+.ball-label {
+  font-weight: bold;
+  color: #3b4760;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
 }
 
-/* Right slice (centered at 135° of blue slice) */
-.label-right {
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%) rotate(90deg);
+.ball-text {
+  font-size: 1.1rem;
+  color: #3b3b3b;
 }
 
-/* Bottom slice (centered at 225° of yellow slice) — DO NOT ROTATE 180° */
-.label-bottom {
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+/* SHAKE ANIMATION */
+.fortune-ball.spinning {
+  animation: shake 0.6s ease-in-out;
 }
 
-/* Left slice (centered at 315° of green slice) */
-.label-left {
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%) rotate(-90deg);
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
 }
 
-/* SPIN ANIMATION */
-.compass-ring.spinning {
-  animation: spinAnim 1s ease-out;
-}
-
-@keyframes spinAnim {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(720deg); }
-}
-
-/* SPIN BUTTON */
+/* BUTTON */
 .spin-button {
   margin-top: 16px;
   padding: 12px 26px;
@@ -161,7 +98,7 @@ html, body {
   cursor: pointer;
 }
 
-/* PROMPT CARD */
+/* PROMPT DISPLAY */
 .prompt-card {
   background: white;
   padding: 18px;
@@ -177,14 +114,4 @@ html, body {
 .prompt-text {
   font-size: 1.3rem;
   margin-top: 6px;
-}
-
-/* Hide teacher tips */
-.prompt-tip {
-  display: none !important;
-}
-
-/* Hide instructions */
-.quick-instructions {
-  display: none !important;
 }
