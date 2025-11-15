@@ -29,7 +29,7 @@ body {
 }
 
 /* ------------------------------
-   FORTUNE BALL (Restored Style)
+   FORTUNE BALL
 ------------------------------ */
 .fortune-ball {
   width: 320px;
@@ -43,30 +43,35 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 
+  text-align: center;
   padding: 2rem;
+
   transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
-/* Glow colors per category — UPDATED */
+/* ------------------------------
+   GLOWS — BOOSTED & HIGHLY VISIBLE
+   (massive spread + blur so glow extends past edges)
+------------------------------ */
 .glow-whatif {
-  /* BLUE glow */
-  box-shadow: 0 0 40px 8px rgba(0, 120, 255, 0.85);
+  /* BLUE */
+  box-shadow: 0 0 90px 45px rgba(0, 120, 255, 0.9);
 }
 
 .glow-imagine {
-  /* GREEN glow */
-  box-shadow: 0 0 40px 8px rgba(0, 255, 120, 0.85);
+  /* GREEN */
+  box-shadow: 0 0 90px 45px rgba(0, 255, 120, 0.9);
 }
 
 .glow-wonder {
-  /* PINK glow */
-  box-shadow: 0 0 40px 8px rgba(255, 80, 200, 0.85);
+  /* PINK */
+  box-shadow: 0 0 90px 45px rgba(255, 80, 200, 0.9);
 }
 
-
-/* spin animation */
+/* ------------------------------
+   SPIN ANIMATION
+------------------------------ */
 .spinning {
   animation: spin 0.6s ease forwards;
 }
@@ -92,7 +97,6 @@ body {
   white-space: pre-line;
 }
 
-/* Make follow-up SMALLER */
 .ball-text small {
   font-size: 0.82rem;
   opacity: 0.85;
