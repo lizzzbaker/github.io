@@ -1,7 +1,57 @@
+/* GLOBAL RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(to bottom, #fdf7ff, #e8f7ff);
+}
+
+/* APP LAYOUT */
+.app {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: #6f7aa3;
+}
+
+/* MAIN */
+.app-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* COMPASS SECTION */
+.compass-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.compass-wrapper {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
 /* POINTER */
 .compass-pointer {
   position: absolute;
-  top: -12px;
+  top: -18px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
@@ -14,8 +64,8 @@
 
 /* WHEEL */
 .compass-ring {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   border: 6px solid white;
   position: relative;
@@ -31,51 +81,61 @@
   overflow: visible;
 }
 
-/* SMALLER CENTER */
+/* CENTER CIRCLE — FIXED SMALLER */
 .compass-center {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: white;
-  border: 6px solid #ffdef0;
+  border: 5px solid #ffdef0;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 3;
+  z-index: 4; /* ABOVE labels but small enough not to block them */
 }
 
 .center-mark {
   font-size: 2rem;
   color: #ff5c99;
-  z-index: 4;
 }
 
-/* LABELS — FIXED + ALIGNED TO SLICES */
+/* LABELS — FULLY FIXED */
 .compass-label {
   position: absolute;
-  font-weight: bold;
+  font-weight: 700;
   color: #3b4760;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   width: 120px;
   text-align: center;
   pointer-events: none;
 }
 
-/* Using polar positions so labels NEVER drift */
-.label-top { 
-  top: 15px; left: 50%; transform: translateX(-50%);
+/* Top slice (centered at 45° of pink slice) */
+.label-top {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.label-right { 
-  right: 15px; top: 50%; transform: translateY(-50%) rotate(90deg);
+/* Right slice (centered at 135° of blue slice) */
+.label-right {
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
 }
 
-.label-bottom { 
-  bottom: 15px; left: 50%; transform: translateX(-50%) rotate(180deg);
+/* Bottom slice (centered at 225° of yellow slice) — DO NOT ROTATE 180° */
+.label-bottom {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.label-left { 
-  left: 15px; top: 50%; transform: translateY(-50%) rotate(-90deg);
+/* Left slice (centered at 315° of green slice) */
+.label-left {
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
 }
 
 /* SPIN ANIMATION */
@@ -85,5 +145,46 @@
 
 @keyframes spinAnim {
   from { transform: rotate(0deg); }
-  to   { transform: rotate(720deg); }
+  to { transform: rotate(720deg); }
+}
+
+/* SPIN BUTTON */
+.spin-button {
+  margin-top: 16px;
+  padding: 12px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 100px;
+  color: white;
+  background: linear-gradient(135deg, #ff82b5, #ffb37e);
+  border: none;
+  cursor: pointer;
+}
+
+/* PROMPT CARD */
+.prompt-card {
+  background: white;
+  padding: 18px;
+  border-radius: 20px;
+  max-width: 420px;
+}
+
+.prompt-tag {
+  font-weight: bold;
+  color: #ff5c99;
+}
+
+.prompt-text {
+  font-size: 1.3rem;
+  margin-top: 6px;
+}
+
+/* Hide teacher tips */
+.prompt-tip {
+  display: none !important;
+}
+
+/* Hide instructions */
+.quick-instructions {
+  display: none !important;
 }
