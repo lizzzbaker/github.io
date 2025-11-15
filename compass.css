@@ -50,7 +50,7 @@ html, body {
   position: relative;
 }
 
-/* FIXED: pointer now points DOWN (top of wheel) */
+/* Pointer (top, pointing downward onto the wheel) */
 .compass-pointer {
   position: absolute;
   top: -6px;
@@ -60,7 +60,7 @@ html, body {
   height: 0;
   border-left: 16px solid transparent;
   border-right: 16px solid transparent;
-  border-top: 28px solid #ff6fa8; /* ← arrow now upright */
+  border-top: 28px solid #ff6fa8;
   z-index: 3;
 }
 
@@ -72,7 +72,7 @@ html, body {
   border: 6px solid white;
   position: relative;
   background: conic-gradient(
-    #ffe8f3 0deg 90deg,   
+    #ffe8f3 0deg 90deg,
     #e3f3ff 90deg 180deg,
     #fef6d8 180deg 270deg,
     #e7f9e8 270deg 360deg
@@ -100,7 +100,7 @@ html, body {
   color: #ff5c99;
 }
 
-/* FIXED LABEL POSITIONS — centered inside each wedge */
+/* LABELS — corrected class names */
 .compass-label {
   position: absolute;
   font-weight: bold;
@@ -110,28 +110,28 @@ html, body {
   text-align: center;
 }
 
-/* Top quadrant (What if…) */
+/* Top quadrant */
 .label-top {
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* Right quadrant (Imagine) */
+/* Right quadrant */
 .label-right {
   right: 40px;
   top: 50%;
   transform: translateY(-50%) rotate(90deg);
 }
 
-/* Bottom quadrant (Wonder) */
+/* Bottom quadrant */
 .label-bottom {
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* Left quadrant (Riddle) */
+/* Left quadrant */
 .label-left {
   left: 40px;
   top: 50%;
@@ -161,7 +161,7 @@ html, body {
   cursor: pointer;
 }
 
-/* PROMPT CARD — cleaned */
+/* PROMPT CARD */
 .prompt-card {
   background: white;
   padding: 18px;
@@ -169,7 +169,6 @@ html, body {
   max-width: 420px;
 }
 
-/* MAIN PROMPT ONLY */
 .prompt-tag {
   font-weight: bold;
   color: #ff5c99;
@@ -180,12 +179,12 @@ html, body {
   margin-top: 6px;
 }
 
-/* REMOVE teacher hint */
+/* Hidden teacher tip, per design */
 .prompt-tip {
   display: none !important;
 }
 
-/* REMOVE instructions section entirely */
+/* Hidden instructions section */
 .quick-instructions {
   display: none !important;
 }
