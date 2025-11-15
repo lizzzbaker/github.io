@@ -5,15 +5,7 @@ const ballText = document.getElementById("ballText");
 
 let isSpinning = false;
 
-/*  
-==========================================================
-   PROMPTS + UNIQUE FOLLOW-UP QUESTIONS (K–1)
-==========================================================
-   Each item:
-   { label: "What if…", text: "What if ___?", follow: "What would ___?" }
-==========================================================
-*/
-
+/* PROMPTS WITH UNIQUE FOLLOW-UP QUESTIONS */
 const prompts = {
   whatif: [
     {
@@ -105,22 +97,28 @@ function pickRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function chooseCategory() {
-  const filter = document.getElementById("promptType").value;
-  if (filter !== "mixed") return filter;
-  return Object.keys(prompts)[Math.floor(Math.random() * 3)];
+function chooseRandomCategory() {
+  const keys = Object.keys(prompts);
+  return keys[Math.floor(Math.random() * keys.length)];
 }
 
-/* UPDATE BALL + CARD */
+/* SHOW PROMPT */
 function showPrompt(category) {
   const chosen = pickRandom(prompts[category]);
-  const combined = `${chosen.text}\n${chosen.follow}`;
+  const followSmall = `<small>${chosen.follow}</small>`;
+  const combined = `${chosen.text}\n${followSmall}`;
 
+  // Label
   ballLabel.textContent = chosen.label;
-  ballText.textContent = combined;
 
-  document.getElementById("promptLabel").textContent = chosen.label;
-  document.getElementById("promptText").textContent = combined;
+  // Prompt + small follow-up
+  ballText.innerHTML = combined;
+
+  // Remove existing glows
+  fortuneBall.classList.remove("glow-whatif", "glow-imagine", "glow-wonder");
+
+  // Add category glow
+  fortuneBall.classList.add(`glow-${category}`);
 }
 
 /* SPIN */
@@ -130,7 +128,7 @@ spinBtn.addEventListener("click", () => {
   isSpinning = true;
   fortuneBall.classList.add("spinning");
 
-  const category = chooseCategory();
+  const category = chooseRandomCategory();
 
   setTimeout(() => {
     showPrompt(category);
