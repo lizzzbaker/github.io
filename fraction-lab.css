@@ -1,57 +1,94 @@
-/* FORTUNE BALL */
+body {
+  font-family: system-ui, sans-serif;
+  background: #f4f3ff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.app-header {
+  margin-top: 20px;
+}
+
+.subtitle {
+  color: #666;
+  margin-top: -10px;
+}
+
+.ball-section {
+  margin-top: 40px;
+}
+
 .fortune-ball {
-  width: 260px;
-  height: 260px;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
   border-radius: 50%;
-  background: #ffe8f3; /* default */
+  background: #000;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  position: relative;
-  border: 6px solid white;
-  box-shadow: 0 0 22px rgba(0, 0, 0, 0.08);
-  transition: background 0.5s ease, transform 0.5s ease;
+  padding: 20px;
+  color: white;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
 .fortune-ball.spinning {
-  transform: scale(1.05) rotate(8deg);
+  transform: rotate(360deg) scale(1.05);
 }
 
-.fortune-text {
-  text-align: center;
-  max-width: 180px;
-  z-index: 2;
+/* Glow colors per category */
+.glow-whatif {
+  box-shadow: 0 0 40px 8px rgba(255, 140, 0, 0.8);
 }
 
-.fortune-label {
-  display: block;
-  font-size: 1.1rem;
+.glow-imagine {
+  box-shadow: 0 0 40px 8px rgba(110, 90, 255, 0.8);
+}
+
+.glow-wonder {
+  box-shadow: 0 0 40px 8px rgba(0, 180, 255, 0.8);
+}
+
+.ball-label {
+  font-size: 1.4rem;
   font-weight: bold;
-  color: #3b4760;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
 }
 
-.fortune-prompt {
-  font-size: 1.25rem;
-  color: #3b4760;
-  margin: 0;
-}
-
-/* CATEGORY COLORS */
-.fortune-whatif { background: #ffe8f3; }
-.fortune-imagine { background: #e3f3ff; }
-.fortune-wonder { background: #fff3c4; }
-.fortune-riddle { background: #e7f9e8; }
-
-/* BUTTON */
-.spin-button {
-  margin-top: 16px;
-  padding: 12px 26px;
+.ball-text {
   font-size: 1rem;
-  font-weight: 600;
-  border-radius: 100px;
-  color: white;
-  background: linear-gradient(135deg, #ff82b5, #ffb37e);
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+/* SMALLER FOLLOW UP QUESTION */
+.ball-text small {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: #ddd;
+}
+
+.spin-button {
+  margin-top: 30px;
+  padding: 12px 28px;
   border: none;
+  border-radius: 8px;
+  background: #6558ff;
+  color: #fff;
+  font-size: 1.2rem;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.spin-button:hover {
+  background: #4b40d1;
+}
+
+.app-footer {
+  margin-top: 60px;
+  color: #777;
+  font-size: 0.9rem;
+  padding-bottom: 40px;
 }
