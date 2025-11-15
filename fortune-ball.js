@@ -15,14 +15,14 @@ const prompts = {
   whatif: [
     { label:"What if…", text:"What if animals could come to school for a day?" },
     { label:"What if…", text:"What if your shoes could talk?" },
-    { label:"What if…", text:"What if clouds could fall like pillows?" },
+    { label:"What if…", text:"What if clouds were made of marshmallows?" },
     { label:"What if…", text:"What if books could whisper stories?" }
   ],
 
   imagine: [
     { label:"Imagine", text:"Imagine your class turned into a jungle." },
     { label:"Imagine", text:"Imagine you woke up tiny—small as a crayon." },
-    { label:"Imagine", text:"Imagine the floor turned into a trampoline." }
+    { label:"Imagine", text:"Imagine the floor became a trampoline." }
   ],
 
   wonder: [
@@ -38,7 +38,7 @@ const prompts = {
   ]
 };
 
-/* CATEGORY → CSS COLOR CLASS */
+/* CATEGORY → CSS CLASS */
 const categoryClass = {
   whatif: "fortune-whatif",
   imagine: "fortune-imagine",
@@ -59,8 +59,9 @@ function chooseCategory() {
 function showPrompt(category) {
   const chosen = pickRandom(prompts[category]);
 
-  // Update ball
+  // Update ball appearance
   fortuneBall.className = "fortune-ball " + categoryClass[category];
+
   ballLabel.textContent = chosen.label;
   ballText.textContent = chosen.text;
 
@@ -81,4 +82,6 @@ spinBtn.addEventListener("click", () => {
   setTimeout(() => {
     showPrompt(category);
     fortuneBall.classList.remove("spinning");
-    isSpinni
+    isSpinning = false;
+  }, 800);
+});
