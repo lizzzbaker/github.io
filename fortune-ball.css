@@ -1,6 +1,13 @@
 /* ------------------------------
    GLOBAL
 ------------------------------ */
+
+/* Prevent glow clipping */
+body, html, .app, .ball-section {
+  overflow: visible !important;
+}
+
+
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
