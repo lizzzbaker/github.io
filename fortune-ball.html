@@ -2,28 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Curiosity Compass – K–1</title>
+  <title>Curiosity Fortune Ball – K–1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="compass.css" />
+  <link rel="stylesheet" href="fortune-ball.css" />
 </head>
 
 <body>
   <div class="app">
     <header class="app-header">
-      <h1>Curiosity Compass</h1>
-      <p class="subtitle">Spark K–1 imagination & talk time</p>
+      <h1>Curiosity Fortune Ball</h1>
+      <p class="subtitle">Prompts for imagination & class talk</p>
     </header>
 
     <main class="app-main">
-      
-      <!-- FORTUNE BALL SECTION -->
+
+      <!-- FORTUNE BALL -->
       <section class="ball-section">
-        <div class="fortune-ball" id="fortuneBall">
-          <p class="ball-label" id="ballLabel">Ready to spin!</p>
-          <p class="ball-text" id="ballText">Tap “Spin the Compass” to get a prompt.</p>
+        <div id="fortuneBall" class="fortune-ball">
+          <p id="ballLabel" class="ball-label">Ready?</p>
+          <p id="ballText" class="ball-text">Tap Spin to get a prompt!</p>
         </div>
 
-        <button id="spinButton" class="spin-button">Spin the Compass</button>
+        <button id="spinButton" class="spin-button">Spin</button>
 
         <div class="controls">
           <label for="promptType">Prompt type:</label>
@@ -37,16 +37,13 @@
         </div>
       </section>
 
-      <!-- PROMPT PANEL -->
-      <section class="prompt-display">
-        <div class="prompt-card" aria-live="polite">
-          <p class="prompt-tag" id="promptLabel">Ready to spin!</p>
-          <p class="prompt-text" id="promptText">
-            Tap “Spin the Compass” and read the prompt aloud to your class.
-          </p>
+      <!-- PROMPT CARD -->
+      <section class="prompt-section">
+        <div class="prompt-card">
+          <p id="promptLabel" class="prompt-tag">Ready?</p>
+          <p id="promptText" class="prompt-text">Press Spin to begin.</p>
         </div>
       </section>
-
     </main>
 
     <footer class="app-footer">
@@ -54,6 +51,6 @@
     </footer>
   </div>
 
-  <script src="compass.js"></script>
+  <script src="fortune-ball.js"></script>
 </body>
 </html>
