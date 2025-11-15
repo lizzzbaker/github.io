@@ -110,9 +110,6 @@ function showPrompt(category) {
   ballLabel.textContent = chosen.label;
   ballText.textContent = combined;
 
-  document.getElementById("promptLabel").textContent = chosen.label;
-  document.getElementById("promptText").textContent = combined;
-
   // Remove existing glows
   fortuneBall.classList.remove("glow-imagine", "glow-whatif", "glow-wonder");
 
@@ -125,6 +122,7 @@ function showPrompt(category) {
     fortuneBall.classList.add("glow-wonder");
   }
 }
+
 
 
 /* SPIN */
