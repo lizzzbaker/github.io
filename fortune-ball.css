@@ -1,0 +1,146 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(to bottom, #fdf7ff, #e8f7ff);
+}
+
+/* Layout */
+.app {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  margin: 0;
+  color: #6f7aa3;
+}
+
+.app-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+/* --------- FORTUNE BALL --------- */
+
+.fortune-ball {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #dcdcec, #1f1f2e);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 20px;
+
+  box-shadow: 0 0 30px rgba(0,0,0,0.15),
+              0 0 60px rgba(0,0,0,0.10);
+
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Text inside ball */
+.ball-label {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.ball-text {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-top: 6px;
+}
+
+/* Category color themes */
+.fortune-whatif {
+  box-shadow: 0 0 25px #ff7ebb, 0 0 60px #ffb0d5;
+}
+
+.fortune-imagine {
+  box-shadow: 0 0 25px #7ab0ff, 0 0 60px #b6d5ff;
+}
+
+.fortune-wonder {
+  box-shadow: 0 0 25px #ffd86b, 0 0 60px #ffebb0;
+}
+
+.fortune-riddle {
+  box-shadow: 0 0 25px #8df08d, 0 0 60px #c9f7c9;
+}
+
+/* Spin + shake animation */
+.fortune-ball.spinning {
+  animation: shakeSpin 0.8s ease-out;
+}
+
+@keyframes shakeSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  20% { transform: rotate(8deg) scale(1.03); }
+  40% { transform: rotate(-8deg) scale(1.03); }
+  60% { transform: rotate(5deg) scale(1.02); }
+  80% { transform: rotate(-5deg) scale(1.01); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+/* Controls */
+.spin-button {
+  margin-top: 14px;
+  padding: 12px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  background: linear-gradient(135deg, #ff82b5, #ffb37e);
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.controls {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #3b4760;
+}
+
+/* Prompt card */
+.prompt-card {
+  background: white;
+  padding: 18px 20px;
+  border-radius: 20px;
+  max-width: 420px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.prompt-tag {
+  color: #ff5c99;
+  font-weight: bold;
+  margin: 0;
+}
+
+.prompt-text {
+  font-size: 1.3rem;
+  margin-top: 6px;
+}
