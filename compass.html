@@ -15,16 +15,15 @@
     </header>
 
     <main class="app-main">
-
-      <!-- COMPASS -->
       <section class="compass-section">
         <div class="compass-wrapper">
+          <!-- Pointer -->
+          <div class="compass-pointer" aria-hidden="true"></div>
 
-          <div class="compass-pointer"></div>
-
+          <!-- Wheel -->
           <div class="compass-ring" id="compassRing">
 
-            <!-- Correctly aligned quadrant labels -->
+            <!-- Correct class names for labels -->
             <div class="compass-label label-top">What if…</div>
             <div class="compass-label label-right">Imagine</div>
             <div class="compass-label label-bottom">Wonder</div>
@@ -37,9 +36,17 @@
         </div>
 
         <button id="spinButton" class="spin-button">Spin the Compass</button>
+
+        <div class="controls">
+          <label for="promptType">Prompt type:</label>
+          <select id="promptType">
+            <option value="mixed">Mixed</option>
+            <option value="whatif">“What if…”</option>
+            <option value="riddle">Riddles</option>
+          </select>
+        </div>
       </section>
 
-      <!-- PROMPT CARD -->
       <section class="prompt-section">
         <div class="prompt-card" aria-live="polite">
           <p class="prompt-tag" id="promptLabel">Ready to spin!</p>
@@ -66,7 +73,7 @@
     </main>
 
     <footer class="app-footer">
-      <span>Curiosity Compass • K–1 prompts</span>
+      <span>Version: K–1 • Curiosity & discussion prompts</span>
     </footer>
   </div>
 
