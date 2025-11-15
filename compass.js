@@ -1,5 +1,6 @@
 const ring = document.getElementById("compassRing");
 const spinBtn = document.getElementById("spinButton");
+const promptTypeSelect = document.getElementById("promptType");
 
 const promptLabel = document.getElementById("promptLabel");
 const promptText = document.getElementById("promptText");
@@ -142,36 +143,36 @@ const prompts = {
   ]
 };
 
-/* RANDOM PICK */
+/* MAP PROMPT TYPE → ANGLE (where the pointer should land) */
+const categoryAngles = {
+  whatif: 0,      // top
+  imagine: 90,    // right
+  wonder: 180,    // bottom
+  riddle: 270     // left
+};
+
 function pickRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-/* DETERMINE WHICH QUADRANT IS SELECTED */
-function determineQuadrant(finalRotation) {
-  // Normalize: 0° at top, increasing clockwise because CSS rotation is clockwise
-  const angle = (finalRotation % 360 + 360) % 360;
-
-  if (angle >= 0 && angle < 90) return "top";       // What if…
-  if (angle >= 90 && angle < 180) return "right";   // Imagine
-  if (angle >= 180 && angle < 270) return "bottom"; // Wonder
-  return "left";                                    // Riddle
-}
-
-/* MAP QUADRANTS TO PROMPT SETS */
-const quadrantToPromptType = {
-  top: "whatif",
-  right: "imagine",
-  bottom: "wonder",
-  left: "riddle"
-};
-
-/* UPDATE UI */
 function showPrompt(category) {
   const p = pickRandom(prompts[category]);
   promptLabel.textContent = p.label;
   promptText.textContent = p.text;
   teacherTip.textContent = p.tip;
+}
+
+/* Decide which category to use for this spin */
+function chooseCategory() {
+  const filter = promptTypeSelect ? promptTypeSelect.value : "mixed";
+
+  if (filter === "whatif" || filter === "riddle") {
+    return filter;
+  }
+
+  // "mixed" (and any future options) — pick any quadrant
+  const categories = Object.keys(categoryAngles);
+  return categories[Math.floor(Math.random() * categories.length)];
 }
 
 /* SPIN ACTION */
@@ -180,23 +181,18 @@ spinBtn.addEventListener("click", () => {
   isSpinning = true;
   spinBtn.disabled = true;
 
-  let randomFullRotations = 360 * 2;
-  let snapAngles = [0, 90, 180, 270];
-  let endAngle = snapAngles[Math.floor(Math.random() * snapAngles.length)];
+  const category = chooseCategory();
+  const endAngle = categoryAngles[category];
 
-  let finalRotation = randomFullRotations + endAngle;
+  const randomFullRotations = 360 * 2; // two full spins for drama
+  const finalRotation = randomFullRotations + endAngle;
 
   ring.classList.add("spinning");
   ring.style.transform = `rotate(${finalRotation}deg)`;
 
   setTimeout(() => {
     ring.classList.remove("spinning");
-
-    let quadrant = determineQuadrant(endAngle);
-    let category = quadrantToPromptType[quadrant];
-
     showPrompt(category);
-
     spinBtn.disabled = false;
     isSpinning = false;
   }, 1000);
